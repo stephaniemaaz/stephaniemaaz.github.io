@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Conferences | Stephanie Maaz</title>
+<meta name="author" content="Stephanie Maaz">
+<meta name="description" content="Submission deadlines for theoretical computer science conferences.">
+<meta name="keywords" content="TCS, Algorithms, Conferences, Deadlines">
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+<link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
+<link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772">
+<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap">
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
+<link rel="shortcut icon" href="/assets/img/favicon.png%EF%B8%8F?18d6e72b0ac63f5829142deaeb0b1835">
+<link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+<link rel="canonical" href="https://stephaniemaaz.github.io/conferences.html">
+<script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script>
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
+<script>initTheme();</script>
+<style>
+  .filter-bar { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:.5rem; align-items:center; }
+  .filter-label { font-size:.8rem; font-weight:600; color:#888; text-transform:uppercase; letter-spacing:.5px; margin-right:.5rem; min-width:60px; }
+  .filter-tag { padding:.25rem .7rem; border:1px solid #dcdfe3; border-radius:8px; font-size:.8rem; font-weight:500; cursor:pointer; background:transparent; color:inherit; transition:background .15s, color .15s, border-color .15s; user-select:none; }
+  .filter-tag:hover { border-color:#888; }
+  .filter-tag.active { background:#425466; color:#fff; border-color:#425466; }
+  html[data-theme='dark'] .filter-tag.active { background:#9ca3af; color:#1a1a1a; border-color:#9ca3af; }
+
+  .conf-card { border:1px solid rgba(128,128,128,0.2); border-radius:8px; padding:.9rem 1.1rem; margin-bottom:.7rem; transition:opacity .2s; }
+  .conf-card.hidden { display:none; }
+  .conf-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:.75rem; margin-bottom:.15rem; }
+  .conf-name { font-size:1.05rem; font-weight:700; }
+  .conf-name a { color:inherit; }
+  .conf-full-name { font-size:.8rem; color:#888; margin-bottom:.3rem; }
+  .conf-meta { font-size:.82rem; color:#666; margin-bottom:.5rem; }
+  html[data-theme='dark'] .conf-meta { color:#aaa; }
+  html[data-theme='dark'] .conf-full-name { color:#aaa; }
+  .conf-meta i { width:14px; text-align:center; margin-right:.2rem; }
+  .conf-meta span.meta-item { margin-right:1.1rem; }
+
+  .conf-tags { display:flex; gap:.3rem; flex-wrap:wrap; flex-shrink:0; }
+  .conf-tag { padding:.12rem .45rem; border-radius:4px; font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.3px; }
+  .conf-tag.algorithms   { background:#E8F5E9; color:#2E7D32; }
+  .conf-tag.complexity   { background:#FCE4EC; color:#AD1457; }
+  .conf-tag.parameterized{ background:#FFF3E0; color:#E65100; }
+  .conf-tag.approximation{ background:#E0F2F1; color:#00695C; }
+  .conf-tag.logic        { background:#F3E5F5; color:#6A1B9A; }
+  .conf-tag.distributed  { background:#E3F2FD; color:#1565C0; }
+  .conf-tag.geometry     { background:#FFF8E1; color:#F57F17; }
+  .conf-tag.combinatorial{ background:#EDE7F6; color:#4527A0; }
+  .conf-tag.concurrency  { background:#E8EAF6; color:#283593; }
+  .conf-tag.region       { background:#ECEFF1; color:#37474F; border:1px dashed #B0BEC5; }
+  html[data-theme='dark'] .conf-tag { opacity:.85; }
+
+  .deadline-list { display:flex; flex-direction:column; gap:.25rem; }
+  .deadline-row { display:flex; align-items:center; justify-content:space-between; font-size:.82rem; padding:.2rem .45rem; border-radius:4px; gap:.5rem; flex-wrap:wrap; }
+  .deadline-row.upcoming { background:rgba(46,125,50,0.08); border:1px solid rgba(46,125,50,0.25); }
+  .deadline-row.passed { color:#999; opacity:.7; }
+  .deadline-label { font-weight:600; min-width:60px; }
+  .deadline-date { flex:1; margin-left:.4rem; }
+  .countdown { font-weight:600; font-size:.78rem; white-space:nowrap; }
+  .countdown.upcoming { color:#2E7D32; }
+  .countdown.passed   { color:#999; }
+  .countdown.imminent { color:#C62828; }
+  .deadline-clock { color:#2E7D32; margin-right:.25rem; }
+  .deadline-clock.imminent { color:#C62828; }
+
+  .section-divider { margin:1.5rem 0 .8rem; padding-bottom:.4rem; border-bottom:2px solid rgba(128,128,128,0.2); font-size:.85rem; font-weight:600; color:#999; text-transform:uppercase; letter-spacing:.5px; }
+  .no-results { text-align:center; color:#999; padding:2rem; font-size:.9rem; display:none; }
+  .note { font-size:.78rem; color:#999; font-style:italic; margin-top:.5rem; }
+</style>
+</head>
+<body class="fixed-top-nav ">
+<header>
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Stephanie</span> Maaz</a>
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item">
+            <a class="nav-link" href="/">About</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/conferences.html">Conferences <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="toggle-container">
+            <button id="light-toggle" title="Change theme">
+              <i class="ti ti-sun-moon" id="light-toggle-system"></i>
+              <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+              <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <progress id="progress" value="0"><div class="progress-container"><span class="progress-bar"></span></div></progress>
+</header>
+
+<div class="container mt-5" role="main">
+  <div class="post">
+    <header class="post-header">
+      <h1 class="post-title">Conferences</h1>
+      <p class="post-description">Submission deadlines for theoretical computer science conferences. All deadlines are AoE (Anywhere on Earth). Filter by topic and region.</p>
+    </header>
+    <article>
+      <div class="filter-bar">
+        <span class="filter-label">Topic</span>
+        <span class="filter-tag active" data-group="topic" data-tag="all">All</span>
+        <span class="filter-tag" data-group="topic" data-tag="algorithms">Algorithms</span>
+        <span class="filter-tag" data-group="topic" data-tag="complexity">Complexity</span>
+        <span class="filter-tag" data-group="topic" data-tag="parameterized">Parameterized</span>
+        <span class="filter-tag" data-group="topic" data-tag="approximation">Approximation</span>
+        <span class="filter-tag" data-group="topic" data-tag="logic">Logic</span>
+        <span class="filter-tag" data-group="topic" data-tag="distributed">Distributed</span>
+        <span class="filter-tag" data-group="topic" data-tag="geometry">Geometry</span>
+        <span class="filter-tag" data-group="topic" data-tag="combinatorial">Combinatorial</span>
+        <span class="filter-tag" data-group="topic" data-tag="concurrency">Concurrency</span>
+      </div>
+      <div class="filter-bar">
+        <span class="filter-label">Region</span>
+        <span class="filter-tag active" data-group="region" data-tag="all">All</span>
+        <span class="filter-tag" data-group="region" data-tag="north-america">North America</span>
+        <span class="filter-tag" data-group="region" data-tag="europe">Europe</span>
+        <span class="filter-tag" data-group="region" data-tag="asia-pacific">Asia-Pacific</span>
+        <span class="filter-tag" data-group="region" data-tag="international">International / Rotating</span>
+      </div>
+
+      <div id="conf-list"></div>
+      <div id="no-results" class="no-results">No conferences match the selected filters.</div>
+
+      <p class="note">Deadlines and dates verified against official conference sites as of May 22, 2026. Deadlines marked &ldquo;Expected&rdquo; are next-edition deadlines projected from prior cycles (CFP not yet posted). Always verify on the official conference website before submitting.</p>
+    </article>
+  </div>
+</div>
+
+<footer class="fixed-bottom" role="contentinfo">
+  <div class="container mt-0">© Copyright 2025 Stephanie Maaz. Last updated: May 22, 2026.</div>
+</footer>
+
+<script>
+// Verified against official conference sites as of 2026-05-22.
+// `Expected` = next-edition deadline projected from prior cycles (no CFP yet).
+const CONFERENCES = [
+  // ——— Theory Flagship ———
+  {
+    id: "stoc", name: "STOC 2026",
+    fullName: "ACM Symposium on Theory of Computing",
+    topics: ["algorithms", "complexity"], region: "north-america",
+    link: "https://acm-stoc.org/stoc2026/",
+    location: "Salt Lake City, UT, USA", dates: "Jun 22–26, 2026",
+    deadlines: [
+      { label: "STOC 2026 Paper", date: "2025-11-04" },
+      { label: "STOC 2027 Paper", date: "2026-11-03", note: "Expected" }
+    ]
+  },
+  {
+    id: "focs", name: "FOCS 2026",
+    fullName: "IEEE Symposium on Foundations of Computer Science",
+    topics: ["algorithms", "complexity"], region: "north-america",
+    link: "https://focs.computer.org/2026/",
+    location: "New York City, NY, USA", dates: "Nov 8–11, 2026",
+    deadlines: [
+      { label: "FOCS 2026 Paper", date: "2026-04-01" },
+      { label: "FOCS 2027 Paper", date: "2027-04-01", note: "Expected" }
+    ]
+  },
+  {
+    id: "soda", name: "SODA 2027",
+    fullName: "ACM-SIAM Symposium on Discrete Algorithms",
+    topics: ["algorithms"], region: "north-america",
+    link: "https://www.siam.org/conferences-events/siam-conferences/soda27/",
+    location: "Philadelphia, PA, USA", dates: "Jan 24–27, 2027",
+    deadlines: [
+      { label: "SODA 2027 Paper", date: "2026-07-09" }
+    ]
+  },
+  {
+    id: "icalp", name: "ICALP 2026",
+    fullName: "International Colloquium on Automata, Languages, and Programming",
+    topics: ["algorithms", "logic", "complexity"], region: "europe",
+    link: "https://icalppodcspaa2026.cs.rhul.ac.uk/icalp/",
+    location: "Egham, UK (Royal Holloway)", dates: "Jul 7–10, 2026",
+    deadlines: [
+      { label: "ICALP 2026 Abstract", date: "2026-02-03" },
+      { label: "ICALP 2026 Paper", date: "2026-02-06" },
+      { label: "ICALP 2027 Paper", date: "2027-02-05", note: "Expected" }
+    ]
+  },
+  {
+    id: "itcs", name: "ITCS 2027",
+    fullName: "Innovations in Theoretical Computer Science",
+    topics: ["algorithms", "complexity"], region: "international",
+    link: "http://itcs-conf.org/",
+    location: "TBA", dates: "Jan 2027 (TBA)",
+    deadlines: [
+      { label: "ITCS 2027 Paper", date: "2026-09-06", note: "Expected (CFP not yet posted)" }
+    ]
+  },
+  {
+    id: "ccc", name: "CCC 2026",
+    fullName: "Computational Complexity Conference",
+    topics: ["complexity"], region: "europe",
+    link: "https://computationalcomplexity.org/Archive/2026/cfp.html",
+    location: "Lisbon, Portugal", dates: "Aug 3–6, 2026",
+    deadlines: [
+      { label: "CCC 2026 Paper", date: "2026-02-06" },
+      { label: "CCC 2027 Paper", date: "2027-02-05", note: "Expected" }
+    ]
+  },
+
+  // ——— European Algorithms ———
+  {
+    id: "esa", name: "ESA 2026",
+    fullName: "European Symposium on Algorithms",
+    topics: ["algorithms"], region: "europe",
+    link: "https://algo-conference.org/2026/esa/",
+    location: "L'Aquila, Italy (ALGO 2026)", dates: "Aug 31 – Sep 4, 2026",
+    deadlines: [
+      { label: "ESA 2026 Abstract", date: "2026-04-21" },
+      { label: "ESA 2026 Paper", date: "2026-04-23" },
+      { label: "ESA 2027 Paper", date: "2027-04-22", note: "Expected" }
+    ]
+  },
+  {
+    id: "stacs", name: "STACS 2027",
+    fullName: "Symposium on Theoretical Aspects of Computer Science",
+    topics: ["algorithms", "complexity"], region: "europe",
+    link: "https://www.stacs-conf.org/",
+    location: "TBA, Europe", dates: "Mar 2027 (TBA)",
+    deadlines: [
+      { label: "STACS 2027 Paper", date: "2026-10-01", note: "Expected (CFP not yet posted)" }
+    ]
+  },
+  {
+    id: "mfcs", name: "MFCS 2026",
+    fullName: "Mathematical Foundations of Computer Science",
+    topics: ["algorithms", "complexity", "logic"], region: "europe",
+    link: "https://mfcs2026.irif.fr/",
+    location: "Paris, France", dates: "Aug 24–28, 2026",
+    deadlines: [
+      { label: "MFCS 2026 Paper", date: "2026-04-24" },
+      { label: "MFCS 2027 Paper", date: "2027-04-23", note: "Expected" }
+    ]
+  },
+  {
+    id: "swat", name: "SWAT 2026",
+    fullName: "Scandinavian Symposium and Workshops on Algorithm Theory",
+    topics: ["algorithms"], region: "europe",
+    link: "https://swat2026.compute.dtu.dk/",
+    location: "Copenhagen, Denmark", dates: "Jun 17–19, 2026",
+    deadlines: [
+      { label: "SWAT 2026 Abstract", date: "2026-02-16" },
+      { label: "SWAT 2026 Paper", date: "2026-02-20" },
+      { label: "SWAT 2028 Paper", date: "2028-02-18", note: "Biennial (even years), Expected" }
+    ]
+  },
+  {
+    id: "wg", name: "WG 2026",
+    fullName: "International Workshop on Graph-Theoretic Concepts in Computer Science",
+    topics: ["algorithms", "combinatorial"], region: "europe",
+    link: "https://wg2026.be/",
+    location: "Kortrijk, Belgium", dates: "Jun 2–4, 2026",
+    deadlines: [
+      { label: "WG 2026 Abstract", date: "2026-02-01" },
+      { label: "WG 2026 Paper", date: "2026-02-04" },
+      { label: "WG 2027 Paper", date: "2027-02-03", note: "Expected" }
+    ]
+  },
+  {
+    id: "csl", name: "CSL 2027",
+    fullName: "Annual Conference of the European Association for Computer Science Logic",
+    topics: ["logic"], region: "europe",
+    link: "https://csl2027.github.io/",
+    location: "Brighton, UK (Univ. of Sussex)", dates: "Jan 25–29, 2027",
+    deadlines: [
+      { label: "CSL 2027 Abstract", date: "2026-07-08" },
+      { label: "CSL 2027 Paper", date: "2026-07-15" }
+    ]
+  },
+  {
+    id: "concur", name: "CONCUR 2026",
+    fullName: "International Conference on Concurrency Theory",
+    topics: ["concurrency", "logic"], region: "europe",
+    link: "https://confest-2026.github.io/concur/",
+    location: "Liverpool, UK (CONFEST 2026)", dates: "Sep 1–4, 2026",
+    deadlines: [
+      { label: "CONCUR 2026 Abstract", date: "2026-04-20" },
+      { label: "CONCUR 2026 Paper", date: "2026-04-27" },
+      { label: "CONCUR 2027 Paper", date: "2027-04-26", note: "Expected" }
+    ]
+  },
+
+  // ——— Asia-Pacific Algorithms ———
+  {
+    id: "isaac", name: "ISAAC 2026",
+    fullName: "International Symposium on Algorithms and Computation",
+    topics: ["algorithms"], region: "asia-pacific",
+    link: "https://www.algo-door.com/isaac2026/",
+    location: "Hangzhou, China (Zhejiang Univ.)", dates: "Dec 6–9, 2026",
+    deadlines: [
+      { label: "ISAAC 2026 Paper", date: "2026-06-26" }
+    ]
+  },
+  {
+    id: "cocoon", name: "COCOON 2026",
+    fullName: "International Computing and Combinatorics Conference",
+    topics: ["algorithms", "combinatorial"], region: "asia-pacific",
+    link: "https://event.ntu.edu.sg/cocoon2026",
+    location: "Singapore (NTU)", dates: "Jul 23–25, 2026",
+    deadlines: [
+      { label: "COCOON 2026 Paper", date: "2026-03-04" },
+      { label: "COCOON 2027 Paper", date: "2027-03-04", note: "Expected" }
+    ]
+  },
+  {
+    id: "fsttcs", name: "FSTTCS 2026",
+    fullName: "Foundations of Software Technology and Theoretical Computer Science",
+    topics: ["algorithms", "logic", "complexity"], region: "asia-pacific",
+    link: "https://www.fsttcs.org.in/2026/",
+    location: "IIT Delhi, India", dates: "Dec 16–18, 2026",
+    deadlines: [
+      { label: "FSTTCS 2026 Abstract", date: "2026-07-04" },
+      { label: "FSTTCS 2026 Paper", date: "2026-07-11" }
+    ]
+  },
+  {
+    id: "walcom", name: "WALCOM 2027",
+    fullName: "International Conference and Workshops on Algorithms and Computation",
+    topics: ["algorithms"], region: "asia-pacific",
+    link: "http://www.walcom-conference.org/",
+    location: "TBA, Asia", dates: "Feb/Mar 2027 (TBA)",
+    deadlines: [
+      { label: "WALCOM 2027 Paper", date: "2026-10-15", note: "Expected (CFP not yet posted)" }
+    ]
+  },
+
+  // ——— North American Algorithms ———
+  {
+    id: "wads", name: "WADS 2027",
+    fullName: "Algorithms and Data Structures Symposium",
+    topics: ["algorithms"], region: "north-america",
+    link: "https://www.wads.org/",
+    location: "TBA, North America", dates: "Aug 2027 (TBA)",
+    deadlines: [
+      { label: "WADS 2027 Paper", date: "2027-02-15", note: "Biennial (odd years), Expected" }
+    ]
+  },
+  {
+    id: "sosa", name: "SOSA 2027",
+    fullName: "Symposium on Simplicity in Algorithms (co-located with SODA)",
+    topics: ["algorithms"], region: "north-america",
+    link: "https://www.siam.org/conferences-events/siam-conferences/sosa27/",
+    location: "Philadelphia, PA, USA", dates: "Jan 25–26, 2027",
+    deadlines: [
+      { label: "SOSA 2027 Paper", date: "2026-07-20", note: "Verify on SIAM site" }
+    ]
+  },
+  {
+    id: "podc", name: "PODC 2026",
+    fullName: "ACM Symposium on Principles of Distributed Computing",
+    topics: ["distributed"], region: "europe",
+    link: "https://www.podc.org/podc2026/",
+    location: "Egham, UK (with ICALP/SPAA)", dates: "Jul 6–10, 2026",
+    deadlines: [
+      { label: "PODC 2026 Abstract", date: "2026-02-11" },
+      { label: "PODC 2026 Paper", date: "2026-02-16" },
+      { label: "PODC 2027 Paper", date: "2027-02-15", note: "Expected" }
+    ]
+  },
+
+  // ——— Specialized: Parameterized ———
+  {
+    id: "ipec", name: "IPEC 2026",
+    fullName: "International Symposium on Parameterized and Exact Computation",
+    topics: ["parameterized"], region: "europe",
+    link: "https://algo-conference.org/2026/ipec/",
+    location: "L'Aquila, Italy (ALGO 2026)", dates: "Sep 2–4, 2026",
+    deadlines: [
+      { label: "IPEC 2026 Paper", date: "2026-06-29" }
+    ]
+  },
+
+  // ——— Specialized: Approximation & Randomization ———
+  {
+    id: "approx", name: "APPROX 2026",
+    fullName: "International Conference on Approximation Algorithms for Combinatorial Optimization Problems",
+    topics: ["approximation"], region: "north-america",
+    link: "https://approxconference.wordpress.com/",
+    location: "Boston University, Boston, MA, USA", dates: "Aug 19–21, 2026",
+    deadlines: [
+      { label: "APPROX 2026 Paper", date: "2026-05-06" },
+      { label: "APPROX 2027 Paper", date: "2027-05-05", note: "Expected" }
+    ]
+  },
+  {
+    id: "random", name: "RANDOM 2026",
+    fullName: "International Conference on Randomization and Computation",
+    topics: ["approximation"], region: "north-america",
+    link: "https://randomconference.com/random-2026-home/",
+    location: "Boston University, Boston, MA, USA (with APPROX)", dates: "Aug 19–21, 2026",
+    deadlines: [
+      { label: "RANDOM 2026 Paper", date: "2026-05-06" },
+      { label: "RANDOM 2027 Paper", date: "2027-05-05", note: "Expected" }
+    ]
+  },
+
+  // ——— Specialized: Logic ———
+  {
+    id: "lics", name: "LICS 2026",
+    fullName: "ACM/IEEE Symposium on Logic in Computer Science",
+    topics: ["logic"], region: "europe",
+    link: "https://lics.siglog.org/lics26/",
+    location: "Lisbon, Portugal (FLoC 2026)", dates: "Jul 20–23, 2026",
+    deadlines: [
+      { label: "LICS 2026 Abstract", date: "2026-01-15" },
+      { label: "LICS 2026 Paper", date: "2026-01-22" },
+      { label: "LICS 2027 Paper", date: "2027-01-21", note: "Expected" }
+    ]
+  },
+
+  // ——— Specialized: Distributed ———
+  {
+    id: "disc", name: "DISC 2026",
+    fullName: "International Symposium on Distributed Computing",
+    topics: ["distributed"], region: "europe",
+    link: "https://www.disc-conference.org/wp/disc2026/",
+    location: "Rome, Italy", dates: "Nov 9–13, 2026",
+    deadlines: [
+      { label: "DISC 2026 Registration", date: "2026-05-27" },
+      { label: "DISC 2026 Paper", date: "2026-06-01" }
+    ]
+  },
+
+  // ——— Specialized: Geometry ———
+  {
+    id: "socg", name: "SoCG 2026",
+    fullName: "International Symposium on Computational Geometry",
+    topics: ["geometry"], region: "north-america",
+    link: "https://cgweek26.computational-geometry.org/",
+    location: "Rutgers Univ., New Brunswick, NJ, USA", dates: "Jun 2–5, 2026",
+    deadlines: [
+      { label: "SoCG 2026 Abstract", date: "2025-11-25" },
+      { label: "SoCG 2026 Paper", date: "2025-12-02" },
+      { label: "SoCG 2027 Paper", date: "2026-12-01", note: "Expected" }
+    ]
+  },
+
+  // ——— International / Rotating ———
+  {
+    id: "iwoca", name: "IWOCA 2026",
+    fullName: "International Workshop on Combinatorial Algorithms",
+    topics: ["algorithms", "combinatorial"], region: "europe",
+    link: "https://iwoca2026.limos.fr/",
+    location: "Clermont-Ferrand, France", dates: "Jun 8–12, 2026",
+    deadlines: [
+      { label: "IWOCA 2026 Abstract", date: "2026-01-26" },
+      { label: "IWOCA 2026 Paper", date: "2026-02-02" },
+      { label: "IWOCA 2027 Paper", date: "2027-02-01", note: "Expected" }
+    ]
+  },
+  {
+    id: "latin", name: "LATIN 2028",
+    fullName: "Latin American Theoretical Informatics Symposium",
+    topics: ["algorithms"], region: "international",
+    link: "https://latintcs.org/",
+    location: "TBA, Latin America", dates: "Apr/May 2028 (TBA)",
+    deadlines: [
+      { label: "LATIN 2028 Paper", date: "2027-10-15", note: "Biennial (even years), Expected" }
+    ]
+  }
+];
+
+/* ----- helpers ----- */
+function parseAoE(dateStr) {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1, d + 1, 12, 0, 0));
+}
+function daysBetween(a, b) { return Math.ceil((b - a) / (1000 * 60 * 60 * 24)); }
+function formatDate(dateStr) {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  const dt = new Date(y, m - 1, d);
+  return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+function getNextDeadline(conf) {
+  const now = new Date();
+  for (const dl of conf.deadlines) {
+    if (parseAoE(dl.date) > now) return dl;
+  }
+  return null;
+}
+function getLatestDeadline(conf) { return conf.deadlines[conf.deadlines.length - 1]; }
+
+function sortConferences(confs) {
+  return confs.slice().sort((a, b) => {
+    const nextA = getNextDeadline(a), nextB = getNextDeadline(b);
+    if (nextA && !nextB) return -1;
+    if (!nextA && nextB) return 1;
+    if (nextA && nextB) return parseAoE(nextA.date) - parseAoE(nextB.date);
+    return parseAoE(getLatestDeadline(b).date) - parseAoE(getLatestDeadline(a).date);
+  });
+}
+
+const REGION_LABELS = {
+  "north-america": "North America",
+  "europe": "Europe",
+  "asia-pacific": "Asia-Pacific",
+  "international": "International"
+};
+
+function renderCard(conf, now, visible) {
+  const card = document.createElement('div');
+  card.className = 'conf-card' + (visible ? '' : ' hidden');
+  card.dataset.topics = conf.topics.join(',');
+  card.dataset.region = conf.region;
+
+  const topicTags = conf.topics.map(t => `<span class="conf-tag ${t}">${t}</span>`).join('');
+  const regionTag = `<span class="conf-tag region">${REGION_LABELS[conf.region] || conf.region}</span>`;
+
+  let deadlinesHtml = '';
+  conf.deadlines.forEach(dl => {
+    const end = parseAoE(dl.date);
+    const isPassed = end <= now;
+    const days = daysBetween(now, end);
+    let countdownHtml = '', rowClass = '', icon = '';
+    if (isPassed) {
+      const ago = Math.abs(days);
+      const label = ago === 0 ? 'Today' : ago === 1 ? '1 day ago' : `${ago} days ago`;
+      countdownHtml = `<span class="countdown passed">${label}</span>`;
+      rowClass = 'passed';
+    } else {
+      const isImminent = days <= 21;
+      const label = days === 0 ? 'Today!' : days === 1 ? '1 day left' : `${days} days left`;
+      countdownHtml = `<span class="countdown ${isImminent ? 'imminent' : 'upcoming'}">${label}</span>`;
+      rowClass = 'upcoming';
+      icon = `<i class="fa fa-clock-o deadline-clock${isImminent ? ' imminent' : ''}" aria-hidden="true"></i>`;
+    }
+    const noteHtml = dl.note ? ` <span style="font-size:.72rem;color:#999;">(${dl.note})</span>` : '';
+    const tilde = dl.note && (dl.note.includes('Expected') || dl.note.includes('Approximate')) ? '~' : '';
+    deadlinesHtml += `
+      <div class="deadline-row ${rowClass}">
+        <span>${icon}<span class="deadline-label">${dl.label}:</span>
+        <span class="deadline-date">${tilde}${formatDate(dl.date)}${noteHtml}</span></span>
+        ${countdownHtml}
+      </div>`;
+  });
+
+  card.innerHTML = `
+    <div class="conf-card-header">
+      <div>
+        <div class="conf-name"><a href="${conf.link}" target="_blank" rel="external nofollow noopener">${conf.name} <i class="fa fa-external-link" style="font-size:.7em;"></i></a></div>
+        <div class="conf-full-name">${conf.fullName}</div>
+      </div>
+      <div class="conf-tags">${topicTags}${regionTag}</div>
+    </div>
+    <div class="conf-meta">
+      <span class="meta-item"><i class="fa fa-map-marker" aria-hidden="true"></i> ${conf.location}</span>
+      <span class="meta-item"><i class="fa fa-calendar" aria-hidden="true"></i> ${conf.dates}</span>
+    </div>
+    <div class="deadline-list">${deadlinesHtml}</div>`;
+  return card;
+}
+
+let activeTopic = 'all';
+let activeRegion = 'all';
+
+function matchesFilters(conf) {
+  const topicOk = activeTopic === 'all' || conf.topics.includes(activeTopic);
+  const regionOk = activeRegion === 'all' || conf.region === activeRegion;
+  return topicOk && regionOk;
+}
+
+function render() {
+  const list = document.getElementById('conf-list');
+  const noResults = document.getElementById('no-results');
+  list.innerHTML = '';
+  const now = new Date();
+  const sorted = sortConferences(CONFERENCES);
+  const upcoming = sorted.filter(c => getNextDeadline(c));
+  const passed = sorted.filter(c => !getNextDeadline(c));
+  let visibleCount = 0;
+
+  if (upcoming.some(matchesFilters)) {
+    const d = document.createElement('div');
+    d.className = 'section-divider';
+    d.textContent = 'Upcoming Deadlines';
+    list.appendChild(d);
+  }
+  upcoming.forEach(c => {
+    const v = matchesFilters(c);
+    list.appendChild(renderCard(c, now, v));
+    if (v) visibleCount++;
+  });
+  if (passed.some(matchesFilters)) {
+    const d = document.createElement('div');
+    d.className = 'section-divider';
+    d.textContent = 'Past Deadlines';
+    list.appendChild(d);
+  }
+  passed.forEach(c => {
+    const v = matchesFilters(c);
+    list.appendChild(renderCard(c, now, v));
+    if (v) visibleCount++;
+  });
+  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  render();
+  document.querySelectorAll('.filter-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      const group = tag.dataset.group;
+      document.querySelectorAll(`.filter-tag[data-group="${group}"]`).forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+      if (group === 'topic') activeTopic = tag.dataset.tag;
+      else activeRegion = tag.dataset.tag;
+      render();
+    });
+  });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
+<script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script>
+<script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
+<script>addBackToTop();</script>
+</body>
+</html>

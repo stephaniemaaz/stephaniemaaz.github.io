@@ -1,6 +1,47 @@
 <!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Stephanie Maaz </title> <meta name="author" content="Stephanie Maaz"> <meta name="description" content="PhD in Computer Science from the University of Waterloo, specializing in Algorithms. "> <meta name="keywords" content="Algorithms, Dynamic Environments, Graphs"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png%EF%B8%8F?18d6e72b0ac63f5829142deaeb0b1835"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://stephaniemaaz.github.io/"> <script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/">About <span class="sr-only">(current)</span> </a> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Stephanie</span> Maaz </h1> <p class="desc">PhD, University of Waterloo | On the Job Market, <a href="mailto:smaaz@uwaterloo.ca">smaaz@uwaterloo.ca</a></p> </header> <article>
+  </script>
+<style>
+  .section-divider { margin:1.5rem 0 .8rem; padding-bottom:.4rem; border-bottom:2px solid rgba(128,128,128,0.2); font-size:.85rem; font-weight:600; color:#999; text-transform:uppercase; letter-spacing:.5px; }
+
+  .pub-card, .service-card { border:1px solid rgba(128,128,128,0.2); border-radius:8px; padding:.85rem 1.05rem; margin-bottom:.65rem; transition:border-color .15s; }
+  .pub-card:hover, .service-card:hover { border-color:rgba(128,128,128,0.45); }
+
+  .pub-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:.6rem; margin-bottom:.2rem; }
+  .pub-title { font-weight:700; font-size:1.02rem; line-height:1.35; }
+  .pub-authors { font-size:.82rem; color:#666; margin-bottom:.45rem; }
+  html[data-theme='dark'] .pub-authors { color:#aaa; }
+  .pub-venue { font-style:italic; color:#555; font-size:.85rem; }
+  html[data-theme='dark'] .pub-venue { color:#bbb; }
+  .pub-links { display:inline-flex; flex-wrap:wrap; gap:.35rem; margin-left:.4rem; }
+  .pub-links a { font-size:.82rem; }
+
+  .pub-tags { display:flex; gap:.3rem; flex-wrap:wrap; flex-shrink:0; }
+  .pub-tag { padding:.12rem .5rem; border-radius:4px; font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.3px; }
+  .pub-tag.conf     { background:#E8F5E9; color:#2E7D32; }
+  .pub-tag.journal  { background:#FFF3E0; color:#E65100; }
+  .pub-tag.preprint { background:#ECEFF1; color:#37474F; border:1px dashed #B0BEC5; }
+  .pub-tag.workshop { background:#E3F2FD; color:#1565C0; }
+  html[data-theme='dark'] .pub-tag { opacity:.85; }
+
+  .service-role { font-weight:700; font-size:.95rem; }
+  .service-org { font-size:.82rem; color:#666; margin-bottom:.15rem; }
+  html[data-theme='dark'] .service-org { color:#aaa; }
+  .service-detail { font-size:.82rem; }
+
+  .bio-card { border:1px solid rgba(128,128,128,0.2); border-radius:8px; padding:1rem 1.15rem; background:rgba(128,128,128,0.04); margin-bottom:.65rem; }
+  html[data-theme='dark'] .bio-card { background:rgba(255,255,255,0.03); }
+
+  .contact-icons a { margin:0 .2rem; }
+  .cv-thesis-links a { display:inline-block; padding:.2rem .5rem; margin:.15rem; border:1px solid rgba(128,128,128,0.35); border-radius:6px; font-size:.85rem; text-decoration:none; transition:background .15s, border-color .15s; }
+  .cv-thesis-links a:hover { background:rgba(128,128,128,0.1); border-color:rgba(128,128,128,0.6); text-decoration:none; }
+
+  .interests-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:.5rem; font-size:.9rem; }
+  .chip { background:#f4eaea; color:#8a5757; border:1px solid #e7d5d5; padding:4px 10px; border-radius:999px; font-weight:600; display:inline-flex; align-items:center; gap:.35rem; }
+  .chip i { font-size:.85em; }
+  html[data-theme='dark'] .chip { background:rgba(244,234,234,0.12); color:#d8a8a8; border-color:rgba(231,213,213,0.25); }
+</style>
+</head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/">About <span class="sr-only">(current)</span> </a> </li> <li class="nav-item"> <a class="nav-link" href="/conferences.html">Conferences</a> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">Stephanie</span> Maaz </h1> <p class="desc">PhD, University of Waterloo | On the Job Market, <a href="mailto:smaaz@uwaterloo.ca">smaaz@uwaterloo.ca</a></p> </header> <article>
 <div style="display: flex; gap: 30px; flex-wrap: wrap;">
   <!-- Left column: Photo, CV, Icons -->
   <div style="flex: 0 0 200px; text-align: center;">
@@ -10,10 +51,9 @@
         <img src="/assets/img/steph-profile2.jpeg?7873959cf0a099286b346eae4cb49c59" class="img-fluid z-depth-1 rounded" style="width: 100%; max-width: 200px;" alt="Stephanie Maaz" loading="eager">
       </picture>
     </figure>
-    <div style="margin-top: 1em;">
-      <a href="https://stephaniemaaz.github.io/assets/pdf/cv-stephanie-maaz.pdf?v=3">[Curriculum Vitae]</a>
-      <br>
-      <a href="https://uwspace.uwaterloo.ca/bitstreams/9e42a37a-0898-421b-8062-9bff166d33b0/download">[Thesis]</a>
+    <div class="cv-thesis-links" style="margin-top: 1em;">
+      <a href="https://stephaniemaaz.github.io/assets/pdf/cv-stephanie-maaz.pdf?v=3"><i class="fa-solid fa-file-lines"></i> CV</a>
+      <a href="https://uwspace.uwaterloo.ca/bitstreams/9e42a37a-0898-421b-8062-9bff166d33b0/download"><i class="fa-solid fa-book"></i> Thesis</a>
     </div>
     <div class="contact-icons" style="font-size: 1.2em; margin-top: 0.3em;">
       <a href="mailto:smaaz@uwaterloo.ca" title="email"><i class="fa-solid fa-envelope"></i></a>
@@ -25,57 +65,103 @@
   <!-- Right column: Text content -->
   <div style="flex: 1; min-width: 300px;">
     <p>Salut <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20">, I recently completed (2021-25) my PhD at the <a href="https://uwaterloo.ca" rel="external nofollow noopener" target="_blank">University of Waterloo</a> in the <a href="https://algcomp.uwaterloo.ca/" rel="external nofollow noopener" target="_blank">Algorithms and Complexity Group</a>, where I worked on reconfiguration (transforming one solution into another via steps while maintaining feasibility) and solution discovery (repairing an infeasible configuration into a valid solution with minimal change), with a focus on parameterized complexity, structural graph parameters, kernelization, and logic-based meta-theorems. My supervisors were <a href="https://cs.uwaterloo.ca/~nishi/" rel="external nofollow noopener" target="_blank">Naomi Nishimura</a> and <a href="https://www.aub.edu.lb/pages/profile.aspx?MemberId=aa368" rel="external nofollow noopener" target="_blank">Amer E. Mouawad</a>. I am currently on the job market.</p>
-    <p style="margin-top: 1em;">My general research goal is to understand and design algorithms for problems arising in dynamic environments, where inputs change over time or solutions involve sequential adaptations, with a current focus on bounded (<em>local</em>) recourse. I am also interested in many classical graph or geometric problems, their dynamic settings variants, and in developing structure-aware or parameterized/approximation algorithms and (lossy) kernelization.</p>
-    <h4 style="margin-top: 1.5em;" id="publications">Publications</h4>
-<ul class="publications-list">
-  <li>
-    <strong>Separating Feasibility and Movement in Solution Discovery: The Case of Path Discovery</strong> <span style="font-size: 0.85em;">with Hanno von Bergen, Larissa Fastenau, Enna Gerhard, Nicola Lorenz, Amer E. Mouawad, Roman Rabinovich, Nicole Schirrmacher, Daniel Schmand, Sebastian Siebertz, Mai Trinh</span><br>
-    <span style="font-size: 0.85em;"><em>arXiv preprint, 2026</em> <a href="https://arxiv.org/abs/2604.27802" rel="external nofollow noopener" target="_blank">[arXiv]</a></span>
-  </li>
-  <li>
-    <strong>On Algorithmic Meta-Theorems for Solution Discovery: Tractability and Barriers</strong> <span style="font-size: 0.85em;">with Nicolas Bousquet, Amer E. Mouawad, Naomi Nishimura, Sebastian Siebertz</span><br>
-    <span style="font-size: 0.85em;"><em>arXiv preprint, 2025</em> <a href="https://arxiv.org/abs/2510.17344" rel="external nofollow noopener" target="_blank">[arXiv]</a></span>
-  </li>
-  <li>
-    <strong>Kernelization Complexity of Solution Discovery Problems</strong> <span style="font-size: 0.85em;">with Mario Grobler, Amer E. Mouawad, Naomi Nishimura, Vijayaragunathan Ramamoorthi, Sebastian Siebertz</span><br>
-    <span style="font-size: 0.85em;"><em>ISAAC 2024</em> <a href="https://arxiv.org/abs/2409.17250" rel="external nofollow noopener" target="_blank">[arXiv]</a> <a href="https://doi.org/10.4230/LIPIcs.ISAAC.2024.36" rel="external nofollow noopener" target="_blank">[Conference]</a> <a href="/assets/pdf/maaz_isaac2024.pdf">[Slides]</a></span>
-  </li>
-  <li>
-    <strong>Solution Discovery via Reconfiguration for Problems in P</strong> <span style="font-size: 0.85em;">with Mario Grobler, Nicole Megow, Amer E. Mouawad, Vijayaragunathan Ramamoorthi, Daniel Schmand, Sebastian Siebertz</span><br>
-    <span style="font-size: 0.85em;"><em>ICALP 2024</em> <a href="https://arxiv.org/abs/2311.13478" rel="external nofollow noopener" target="_blank">[arXiv]</a> <a href="https://doi.org/10.4230/LIPIcs.ICALP.2024.76" rel="external nofollow noopener" target="_blank">[Conference]</a></span>
-  </li>
-  <li>
-    <strong>Parameterized Complexity of Reconfiguration of Atoms</strong> <span style="font-size: 0.85em;">with Alexandre Cooper, Amer E. Mouawad, Naomi Nishimura</span><br>
-    <span style="font-size: 0.85em;"><em>WALCOM 2022, Algorithmica 2024</em> <a href="https://arxiv.org/abs/2107.12267" rel="external nofollow noopener" target="_blank">[arXiv]</a> <a href="https://doi.org/10.1007/978-3-030-96731-4_22" rel="external nofollow noopener" target="_blank">[Conference]</a> <a href="https://doi.org/10.1007/s00453-024-01262-z" rel="external nofollow noopener" target="_blank">[Journal]</a></span>
-  </li>
-  <li>
-    <strong>Algorithms to Solve Atom Reconfiguration Problems. I. Redistribution-Reconfiguration Algorithm</strong> <span style="font-size: 0.85em;">with Barry Cimring, Remy El Sabeh, Marc Bacvanski, Izzat El Hajj, Naomi Nishimura, Amer E. Mouawad, Alexandre Cooper</span><br>
-    <span style="font-size: 0.85em;"><em>Phys. Rev. A 108, 023107, 2023</em> <a href="https://arxiv.org/abs/2212.03885" rel="external nofollow noopener" target="_blank">[arXiv]</a> <a href="https://doi.org/10.1103/PhysRevA.108.023107" rel="external nofollow noopener" target="_blank">[Journal]</a></span>
-  </li>
-  <li>
-    <strong>Algorithms to Solve Atom Reconfiguration Problems. II. Assignment-Rerouting-Ordering Algorithm</strong> <span style="font-size: 0.85em;">with Remy El Sabeh, Jessica Bohm, Zhiqian Ding, Naomi Nishimura, Izzat El Hajj, Amer E. Mouawad, Alexandre Cooper</span><br>
-    <span style="font-size: 0.85em;"><em>Phys. Rev. A 108, 023108, 2023</em> <a href="https://arxiv.org/abs/2212.05586" rel="external nofollow noopener" target="_blank">[arXiv]</a> <a href="https://doi.org/10.1103/PhysRevA.108.023108" rel="external nofollow noopener" target="_blank">[Journal]</a></span>
-  </li>
-</ul>
+    <div style="margin-top: 1em;">
+      My current research interests include (but are not limited to):
+      <div class="interests-row">
+        <span class="chip"><i class="fa-solid fa-percent"></i> Approximation</span>
+        <span class="chip"><i class="fa-solid fa-sliders"></i> Parameterized</span>
+        <span class="chip"><i class="fa-solid fa-graduation-cap"></i> Learning-Augmented</span>
+        <span class="chip"><i class="fa-solid fa-check-double"></i> Exact</span>
+        <span style="align-self:center; color:#888; font-size:.85rem;">algorithms for</span>
+      </div>
+      <div class="interests-row">
+        <span class="chip"><i class="fa-solid fa-shuffle"></i> Reconfiguration</span>
+        <span class="chip"><i class="fa-solid fa-magnifying-glass"></i> Solution Discovery</span>
+        <span class="chip"><i class="fa-solid fa-diagram-project"></i> Dynamic Graph Problems</span>
+      </div>
+    </div>
 
-    <h4 style="margin-top: 1.5em;" id="teaching-service">Teaching and Selected Service</h4>
-    <p style="margin-bottom: 0.5em;"><strong>Teaching Assistant</strong>, University of Waterloo (2021-24)<br>
-    <span style="font-size: 0.85em;">CS245 Logic and Computation, CS251 Computer Organization & Design</span></p>
+    <div class="section-divider" id="publications">Publications</div>
 
-    <p style="margin-bottom: 0.5em;"><strong>Referee</strong><br>
-    <span style="font-size: 0.85em;">SIAM Journal on Discrete Mathematics</span></p>
+    <div class="pub-card">
+      <div class="pub-card-header">
+        <div class="pub-title">Separating Feasibility and Movement in Solution Discovery: The Case of Path Discovery</div>
+        <div class="pub-tags"><span class="pub-tag preprint">arXiv 2026</span></div>
+      </div>
+      <div class="pub-authors">with Hanno von Bergen, Larissa Fastenau, Enna Gerhard, Nicola Lorenz, Amer E. Mouawad, Roman Rabinovich, Nicole Schirrmacher, Daniel Schmand, Sebastian Siebertz, Mai Trinh <span class="pub-links"><a href="https://arxiv.org/abs/2604.27802" rel="external nofollow noopener" target="_blank">[arXiv]</a></span></div>
+    </div>
 
-    <p style="margin-bottom: 0.5em;"><strong>External Reviewer</strong><br>
-    <span style="font-size: 0.85em;">WG'23, ICALP'25, IWOCA'26, ESA'26</span></p>
+    <div class="pub-card">
+      <div class="pub-card-header">
+        <div class="pub-title">On Algorithmic Meta-Theorems for Solution Discovery: Tractability and Barriers</div>
+        <div class="pub-tags"><span class="pub-tag preprint">arXiv 2025</span></div>
+      </div>
+      <div class="pub-authors">with Nicolas Bousquet, Amer E. Mouawad, Naomi Nishimura, Sebastian Siebertz <span class="pub-links"><a href="https://arxiv.org/abs/2510.17344" rel="external nofollow noopener" target="_blank">[arXiv]</a></span></div>
+    </div>
 
-    <p style="margin-bottom: 0.5em;"><strong>Senator</strong>, University of Waterloo (2023-25)<br>
-    <span style="font-size: 0.85em;">Participated in university governance on academic programs, curriculum changes, and graduate research and other regulations</span></p>
+    <div class="pub-card">
+      <div class="pub-card-header">
+        <div class="pub-title">Kernelization Complexity of Solution Discovery Problems</div>
+        <div class="pub-tags"><span class="pub-tag conf">ISAAC 2024</span></div>
+      </div>
+      <div class="pub-authors">with Mario Grobler, Amer E. Mouawad, Naomi Nishimura, Vijayaragunathan Ramamoorthi, Sebastian Siebertz <span class="pub-links"><a href="https://arxiv.org/abs/2409.17250" rel="external nofollow noopener" target="_blank">[arXiv]</a> <a href="https://doi.org/10.4230/LIPIcs.ISAAC.2024.36" rel="external nofollow noopener" target="_blank">[Conference]</a> <a href="/assets/pdf/maaz_isaac2024.pdf">[Slides]</a></span></div>
+    </div>
 
-    <p style="margin-bottom: 0.5em;"><strong>Community Service Volunteer</strong>, CCECS, American University of Beirut (2013-17)<br>
-    <span style="font-size: 0.85em;">Tutored refugee students at NASMA Learning Center</span></p>
+    <div class="pub-card">
+      <div class="pub-card-header">
+        <div class="pub-title">Solution Discovery via Reconfiguration for Problems in P</div>
+        <div class="pub-tags"><span class="pub-tag conf">ICALP 2024</span></div>
+      </div>
+      <div class="pub-authors">with Mario Grobler, Nicole Megow, Amer E. Mouawad, Vijayaragunathan Ramamoorthi, Daniel Schmand, Sebastian Siebertz <span class="pub-links"><a href="https://arxiv.org/abs/2311.13478" rel="external nofollow noopener" target="_blank">[arXiv]</a> <a href="https://doi.org/10.4230/LIPIcs.ICALP.2024.76" rel="external nofollow noopener" target="_blank">[Conference]</a></span></div>
+    </div>
 
-    <p style="margin-bottom: 0.5em;"><strong>Community Service Organizer</strong>, USAID, Lebanon (2015-17)<br>
-    <span style="font-size: 0.85em;">Worked on a team to secure funding and collaborate with local communities to open an ancient cultural wilderness trail</span></p>
+    <div class="pub-card">
+      <div class="pub-card-header">
+        <div class="pub-title">Parameterized Complexity of Reconfiguration of Atoms</div>
+        <div class="pub-tags"><span class="pub-tag conf">WALCOM 2022</span><span class="pub-tag journal">Algorithmica 2024</span></div>
+      </div>
+      <div class="pub-authors">with Alexandre Cooper, Amer E. Mouawad, Naomi Nishimura <span class="pub-links"><a href="https://arxiv.org/abs/2107.12267" rel="external nofollow noopener" target="_blank">[arXiv]</a> <a href="https://doi.org/10.1007/978-3-030-96731-4_22" rel="external nofollow noopener" target="_blank">[Conference]</a> <a href="https://doi.org/10.1007/s00453-024-01262-z" rel="external nofollow noopener" target="_blank">[Journal]</a></span></div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-card-header">
+        <div class="pub-title">Algorithms to Solve Atom Reconfiguration Problems. I. Redistribution-Reconfiguration Algorithm</div>
+        <div class="pub-tags"><span class="pub-tag journal">Phys. Rev. A 2023</span></div>
+      </div>
+      <div class="pub-authors">with Barry Cimring, Remy El Sabeh, Marc Bacvanski, Izzat El Hajj, Naomi Nishimura, Amer E. Mouawad, Alexandre Cooper <span class="pub-links"><a href="https://arxiv.org/abs/2212.03885" rel="external nofollow noopener" target="_blank">[arXiv]</a> <a href="https://doi.org/10.1103/PhysRevA.108.023107" rel="external nofollow noopener" target="_blank">[Journal]</a></span></div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-card-header">
+        <div class="pub-title">Algorithms to Solve Atom Reconfiguration Problems. II. Assignment-Rerouting-Ordering Algorithm</div>
+        <div class="pub-tags"><span class="pub-tag journal">Phys. Rev. A 2023</span></div>
+      </div>
+      <div class="pub-authors">with Remy El Sabeh, Jessica Bohm, Zhiqian Ding, Naomi Nishimura, Izzat El Hajj, Amer E. Mouawad, Alexandre Cooper <span class="pub-links"><a href="https://arxiv.org/abs/2212.05586" rel="external nofollow noopener" target="_blank">[arXiv]</a> <a href="https://doi.org/10.1103/PhysRevA.108.023108" rel="external nofollow noopener" target="_blank">[Journal]</a></span></div>
+    </div>
+
+    <div class="section-divider" id="teaching-service">Teaching and Selected Service</div>
+
+    <div class="service-card">
+      <div class="service-role">Teaching Assistant</div>
+      <div class="service-org">University of Waterloo (2021&ndash;24)</div>
+      <div class="service-detail">CS245 Logic and Computation, CS251 Computer Organization &amp; Design</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-role">Referee</div>
+      <div class="service-detail">SIAM Journal on Discrete Mathematics</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-role">External Reviewer</div>
+      <div class="service-detail">WG'23, ICALP'25, IWOCA'26, ESA'26</div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-role">Senator</div>
+      <div class="service-org">University of Waterloo (2023&ndash;25)</div>
+      <div class="service-detail">Participated in university governance on academic programs, curriculum changes, and graduate research and other regulations</div>
+    </div>
   </div>
 </div>
 </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2025 Stephanie Maaz. Last updated: March 17, 2026. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?70d799092f862ad98c7876aa47712e20"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
