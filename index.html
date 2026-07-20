@@ -1,137 +1,438 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Stephanie Maaz </title> <meta name="author" content="Stephanie Maaz"> <meta name="description" content="PhD in Computer Science from the University of Waterloo, specializing in Algorithms. "> <meta name="keywords" content="Algorithms, Dynamic Environments, Graphs"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png%EF%B8%8F?sm"> <link rel="stylesheet" href="/assets/css/main.css?bluev1"> <link rel="canonical" href="https://stephaniemaaz.github.io/"> <script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
-    initTheme();
-  </script>
-<style>
-  @media (min-width: 1200px) { .container { max-width: 1280px; } }
-  #progress { width: 100% !important; height: 1.5px !important; background: #1F4E79 !important; appearance: none; -webkit-appearance: none; border: none; display: block; }
-  #progress::-webkit-progress-bar { background: #1F4E79 !important; }
-  #progress::-webkit-progress-value { background: #1F4E79 !important; }
-  #progress::-moz-progress-bar { background: #1F4E79 !important; }
-  .section-divider { margin:1.5rem 0 .8rem; padding-bottom:.4rem; border-bottom:2px solid rgba(128,128,128,0.2); font-size:.85rem; font-weight:600; color:#999; text-transform:uppercase; letter-spacing:.5px; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Stephanie Maaz</title>
+  <meta name="author" content="Stephanie Maaz">
+  <meta name="description" content="Stephanie Maaz is a theoretical computer scientist working on algorithms, graph problems, reconfiguration, and solution discovery.">
+  <meta name="keywords" content="Algorithms, Dynamic Environments, Graphs, Reconfiguration, Solution Discovery">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+  <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
+  <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772">
+  <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800,900|Space+Grotesk:500,600,700|Material+Icons&amp;display=swap">
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=palette3">
+  <link rel="shortcut icon" href="/assets/img/favicon.svg?v=palette3">
+  <link rel="stylesheet" href="/assets/css/main.css?palette3">
+  <link rel="canonical" href="https://stephaniemaaz.github.io/">
+  <script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script>
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
+  <script>initTheme();</script>
+  <style>
+    :root {
+      /*
+        Palette 1, saved:
+        paper #ffffff; cream #f5f7f2; ink #101113; muted #5c625e;
+        accent #df2d8a; sage #087b5f; lime #e3ff3f; rose #ff78aa.
 
-  .pub-card, .service-card { border:1px solid rgba(128,128,128,0.2); border-radius:8px; padding:.85rem 1.05rem; margin-bottom:.65rem; transition:border-color .15s; }
-  .pub-card:hover, .service-card:hover { border-color:rgba(128,128,128,0.45); }
+        Palette 2, saved:
+        paper #fffefd; cream #f4f0ff; ink #111217; muted #62606a;
+        accent #ff4f3e; sage #006d6a; lime #a9ffcb; rose #ff8aa6.
 
-  .pub-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:.6rem; margin-bottom:.2rem; }
-  .pub-title { font-weight:700; font-size:1.02rem; line-height:1.35; }
-  .pub-authors { font-size:.82rem; color:#666; margin-bottom:.45rem; }
-  html[data-theme='dark'] .pub-authors { color:#aaa; }
-  .pub-venue { font-style:italic; color:#555; font-size:.85rem; }
-  html[data-theme='dark'] .pub-venue { color:#bbb; }
-  .pub-links { display:inline-flex; flex-wrap:wrap; gap:.35rem; margin-left:.4rem; }
-  .pub-links a { font-size:.82rem; }
+        Palette 3, live:
+        paper #fffefd; cream #f7f3f8; ink #171418; muted #696168;
+        accent #b84a72; sage #4f7f67; lime #d9e8b4; rose #e7a0b8.
+      */
+      --global-theme-color: #b84a72;
+      --global-hover-color: #4f7f67;
+      --global-code-bg-color: rgba(184, 74, 114, .08);
+      --sm-paper: #fffefd;
+      --sm-cream: #f7f3f8;
+      --sm-ink: #171418;
+      --sm-muted: #696168;
+      --sm-accent: #b84a72;
+      --sm-accent-rgb: 184, 74, 114;
+      --sm-sage: #4f7f67;
+      --sm-lime: #d9e8b4;
+      --sm-lime-rgb: 217, 232, 180;
+      --sm-rose: #e7a0b8;
+      --sm-line: rgba(17, 17, 17, .14);
+      --sm-soft: #f7f3f8;
+      --sm-featured: #fbf1f5;
+      --sm-font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+      --sm-font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    }
 
-  .pub-tags { display:flex; gap:.3rem; flex-wrap:wrap; flex-shrink:0; }
-  .pub-tag { padding:.12rem .5rem; border-radius:4px; font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.3px; }
-  .pub-tag.conf     { background:#E8F5E9; color:#2E7D32; }
-  .pub-tag.journal  { background:#FFF3E0; color:#E65100; }
-  .pub-tag.preprint { background:#ECEFF1; color:#37474F; border:1px dashed #B0BEC5; }
-  .pub-tag.workshop { background:#E3F2FD; color:#1565C0; }
-  html[data-theme='dark'] .pub-tag { opacity:.85; }
+    @media (min-width: 1200px) { .container { max-width: 1180px; } }
 
-  .service-role { font-weight:700; font-size:.95rem; }
-  .service-org { font-size:.82rem; color:#666; margin-bottom:.15rem; }
-  html[data-theme='dark'] .service-org { color:#aaa; }
-  .service-detail { font-size:.82rem; }
+    body {
+      background: linear-gradient(180deg, var(--sm-paper) 0, var(--sm-paper) 520px, var(--sm-cream) 100%);
+      color: var(--sm-ink);
+      font-family: var(--sm-font-body);
+    }
+    body.fixed-top-nav { padding-top: 56px; }
+    #progress { width: 100% !important; height: 2px !important; background: var(--sm-accent) !important; appearance: none; -webkit-appearance: none; border: none; display: block; }
+    #progress::-webkit-progress-bar { background: var(--sm-accent) !important; }
+    #progress::-webkit-progress-value { background: var(--sm-accent) !important; }
+    #progress::-moz-progress-bar { background: var(--sm-accent) !important; }
+    .navbar { background: rgba(255,255,255,.92) !important; backdrop-filter: blur(14px); border-bottom: 1px solid var(--sm-line); font-family: var(--sm-font-body); }
+    .navbar-brand, .nav-link { font-family: var(--sm-font-body); }
 
-  .bio-card { border:1px solid rgba(128,128,128,0.2); border-radius:8px; padding:1rem 1.15rem; background:rgba(128,128,128,0.04); margin-bottom:.65rem; }
-  html[data-theme='dark'] .bio-card { background:rgba(255,255,255,0.03); }
+    .home-shell { padding: 2.5rem 0 3.4rem; position: relative; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(240px, 3fr); gap: 3rem; align-items: start; position: relative; isolation: isolate; }
+    .hero-grid::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 3.6rem;
+      right: 4rem;
+      width: 690px;
+      max-width: 62vw;
+      height: 370px;
+      background: url('/assets/img/dynamic-discovery-overview.png') center / cover no-repeat;
+      opacity: .08;
+      filter: saturate(.88) contrast(1.02);
+      transform: rotate(-2deg);
+      transform-origin: center;
+      mix-blend-mode: multiply;
+    }
+    .hero-title { font-family: var(--sm-font-display); font-size: 6.1rem; line-height: .9; margin: 0 0 .8rem; color: var(--sm-ink); letter-spacing: 0; max-width: 8ch; font-weight: 700; }
+    .hero-title span { display: block; }
+    .hero-subtitle { display: inline-block; background: var(--sm-lime); color: var(--sm-ink); font-family: var(--sm-font-display); font-size: 1.35rem; line-height: 1.15; margin: 0 0 1.45rem; max-width: 25rem; padding: .18rem .46rem .24rem; transform: rotate(-1.2deg); transform-origin: left center; font-weight: 700; }
+    .hero-lede { font-size: 1.12rem; line-height: 1.72; max-width: 720px; margin-bottom: 1rem; color: var(--sm-ink); }
+    .hero-lede strong { color: var(--sm-ink); }
+    .hero-links { display: flex; flex-wrap: wrap; gap: .4rem .95rem; margin: 1.35rem 0 1.5rem; }
+    .hero-links a { color: var(--sm-accent); font-weight: 800; font-size: .9rem; text-decoration: none; border-bottom: 1px solid rgba(var(--sm-accent-rgb), .35); padding-bottom: .05rem; }
+    .hero-links a:hover { color: var(--sm-sage); border-bottom-color: var(--sm-sage); text-decoration: none; }
+    .hero-links i { margin-right: .35rem; }
 
-  .contact-icons a { margin:0 .2rem; }
-  .cv-thesis-links a { display:inline-block; padding:.2rem .5rem; margin:.15rem; border:1px solid rgba(128,128,128,0.35); border-radius:6px; font-size:.85rem; text-decoration:none; transition:background .15s, border-color .15s; }
-  .cv-thesis-links a:hover { background:rgba(128,128,128,0.1); border-color:rgba(128,128,128,0.6); text-decoration:none; }
+    .research-visual { position: relative; margin: 2.15rem 0 1.7rem; width: min(720px, 100%); transform: rotate(-.7deg); transform-origin: left center; background: #fff; border: 2px solid var(--sm-ink); box-shadow: 10px 10px 0 var(--sm-lime); }
+    .research-crop { aspect-ratio: 1200 / 535; overflow: hidden; }
+    .research-crop img { display: block; width: 100%; height: auto; opacity: .88; mix-blend-mode: multiply; transform: translateY(-13.4%); }
 
-  .interests-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:.5rem; font-size:.9rem; }
-  .chip { background:#EAF0F6; color:#1F4E79; border:1px solid #D5E1ED; padding:4px 10px; border-radius:999px; font-weight:600; display:inline-flex; align-items:center; gap:.35rem; }
-  .chip i { font-size:.85em; }
-  html[data-theme='dark'] .chip { background:rgba(31,78,121,0.18); color:#8FB3D9; border-color:rgba(143,179,217,0.3); }
+    .profile-panel { position: sticky; top: 82px; background: #fff; border: 2px solid var(--sm-ink); padding: 1rem; box-shadow: 10px 10px 0 rgba(var(--sm-lime-rgb), .78); transform: rotate(.7deg); }
+    .profile-photo { width: 100%; max-width: 210px; aspect-ratio: 1 / 1; object-fit: cover; display: block; margin-bottom: 1rem; filter: saturate(.92) contrast(.98); }
+    .profile-name { font-size: 1.05rem; font-weight: 800; margin-bottom: .2rem; color: var(--sm-ink); }
+    .profile-line { font-size: .9rem; color: var(--sm-muted); line-height: 1.45; margin-bottom: .55rem; }
+    .side-block { margin-top: 1.25rem; }
+    .side-block h2 { color: var(--sm-accent); font-size: .74rem; text-transform: uppercase; letter-spacing: 0; font-weight: 800; margin: 0 0 .45rem; }
+    .side-block p, .side-block div { font-size: .86rem; line-height: 1.52; margin: 0 0 .35rem; }
+    .year { color: var(--sm-accent); font-variant-numeric: tabular-nums; font-size: .78rem; font-weight: 700; margin-right: .35rem; }
 
-  .side-section { text-align:left; margin-top:1.2rem; font-size:.85rem; }
-  .side-section h3 { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:#999; margin:0 0 .4rem; padding-bottom:.25rem; border-bottom:1px solid rgba(128,128,128,0.2); }
-  .side-section > div { line-height:1.45; margin-bottom:.18rem; word-wrap:break-word; }
-  .bio-entry { margin-bottom:.3rem; line-height:1.4; }
-  .bio-year { font-weight:400; color:#1F4E79; font-variant-numeric:tabular-nums; font-size:.78rem; margin-right:.4rem; }
-  .bio-inst { font-style:italic; }
-  html[data-theme='dark'] .bio-year { color:#8FB3D9; }
-  .social-links { margin-top:.6rem; display:flex; flex-wrap:wrap; gap:.4rem 1.1rem; font-size:.92rem; }
-  .social-links a { white-space:nowrap; }
-  .social-links i { margin-right:.25rem; }
-  .news-list { margin:.4rem 0 .6rem; font-size:.85rem; }
-  .news-entry { margin-bottom:.35rem; line-height:1.5; }
-  .news-list .news-entry:nth-child(n+6) { display:none; }
-  .news-list.news-expanded .news-entry { display:block; }
-  .news-date { color:#1F4E79; font-weight:400; font-size:.78rem; margin-right:.4rem; font-variant-numeric:tabular-nums; }
-  html[data-theme='dark'] .news-date { color:#8FB3D9; }
-  .see-all-link { text-transform:none; letter-spacing:normal; font-weight:400; font-size:.85rem; margin-left:.45rem; cursor:pointer; }
-</style>
-</head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Stephanie</span> Maaz</a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/">About <span class="sr-only">(current)</span> </a> </li> <li class="nav-item"> <a class="nav-link" href="/conferences.html">Conferences</a> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <article>
-<div style="display: flex; gap: 30px; flex-wrap: wrap;">
-  <!-- Left column: Photo, CV, Icons -->
-  <div style="flex: 0 0 230px; text-align: center;">
-    <figure style="margin: 0;">
-      <picture>
-        <img src="/assets/img/steph-profile2.jpeg" class="img-fluid z-depth-1 rounded-circle" style="width: 100%; max-width: 200px; aspect-ratio: 1 / 1; object-fit: cover;" alt="Stephanie Maaz" loading="eager">
-      </picture>
-    </figure>
-    <div class="side-section">
-      <h3>Contact</h3>
-      <div><i class="fa-solid fa-envelope" style="width:1.1em; margin-right:.3rem; color:#1F4E79;"></i><a href="mailto:smaaz@uwaterloo.ca">smaaz@uwaterloo.ca</a></div>
-      <div><i class="fa-solid fa-location-dot" style="width:1.1em; margin-right:.3rem; color:#1F4E79;"></i>Abu Dhabi, UAE</div>
-    </div>
+    .statement-banner { margin: 1.55rem 0 2rem; padding: 1.1rem 1.25rem 1.2rem; background: var(--sm-ink); color: #fff; font-family: var(--sm-font-display); font-size: 1.48rem; line-height: 1.35; font-weight: 700; transform: rotate(-.45deg); }
+    .statement-banner em { color: var(--sm-lime); font-style: normal; }
 
-    <div class="side-section">
-      <h3>Bio</h3>
-      <div class="bio-entry"><span class="bio-year">2021-2025</span>PhD, <span class="bio-inst">U. Waterloo</span></div>
-      <div class="bio-entry"><span class="bio-year">2019-2021</span>BSc CS, <span class="bio-inst">American U. of Beirut</span></div>
-      <div class="bio-entry"><span class="bio-year">2013-2016</span>BBA Finance, <span class="bio-inst">American U. of Beirut</span></div>
-    </div>
-  </div>
-  <!-- Right column: Text content -->
-  <div style="flex: 1; min-width: 300px;">
-    <p>Salut <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20">, I am <strong>Stephanie Maaz</strong>. I am a researcher in theoretical computer science, particularly algorithms and graph problems. I recently completed my PhD at <a href="https://uwaterloo.ca" rel="external nofollow noopener" target="_blank">UWaterloo</a> under the supervision of <a href="https://cs.uwaterloo.ca/~nishi/" rel="external nofollow noopener" target="_blank">Naomi Nishimura</a> and <a href="https://www.aub.edu.lb/pages/profile.aspx?MemberId=aa368" rel="external nofollow noopener" target="_blank">Amer E. Mouawad</a> in the <a href="https://algcomp.uwaterloo.ca/" rel="external nofollow noopener" target="_blank">Algorithms and Complexity Group</a>.</p>
-    <div class="social-links">
-      <a href="mailto:smaaz@uwaterloo.ca"><i class="fa-solid fa-envelope"></i> Email</a>
-      <a href="https://scholar.google.com/citations?user=BTUXX9AAAAAJ" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i> Google Scholar</a>
-      <a href="https://github.com/stephaniemaaz" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-      <a href="https://www.linkedin.com/in/stephaniemaaz" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-      <a href="https://orcid.org/0000-0001-7188-8834" rel="external nofollow noopener" target="_blank"><i class="ai ai-orcid"></i> ORCID</a>
-    </div>
-    <div style="margin-top: 1em;">
-      My current research interests include (but are not limited to):
-      <div class="interests-row">
-        <span class="chip"><i class="fa-solid fa-percent"></i> Approximation</span>
-        <span class="chip"><i class="fa-solid fa-sliders"></i> Parameterized</span>
-        <span class="chip"><i class="fa-solid fa-graduation-cap"></i> Learning-Augmented</span>
-        <span class="chip"><i class="fa-solid fa-check-double"></i> Exact</span>
-        <span style="align-self:center; color:#888; font-size:.85rem;">algorithms for</span>
+    .section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin: 2.15rem 0 .65rem; }
+    .section-title h2 { font-family: var(--sm-font-display); font-size: 1.5rem; font-weight: 700; color: var(--sm-ink); margin: 0; letter-spacing: 0; }
+    .section-title h2::before { content: ""; display: inline-block; width: 2.2rem; height: 3px; background: var(--sm-accent); margin-right: .6rem; vertical-align: middle; transform: translateY(-.12rem); }
+    .section-title a { font-size: .86rem; }
+    .section-actions { display: flex; align-items: center; gap: .75rem; }
+    .toggle-list { appearance: none; background: transparent; border: 0; padding: 0; color: var(--sm-accent); cursor: pointer; font: inherit; font-size: .86rem; font-weight: 700; text-decoration: underline; text-underline-offset: .16rem; }
+    .toggle-list:hover { color: var(--sm-sage); }
+
+    .pub-list { display: grid; gap: .72rem; }
+    .pub-list.is-collapsed .pub-card:nth-of-type(n+4) { display: none; }
+    .pub-card { border: 1px solid var(--sm-line); padding: .9rem .95rem .85rem; background: #fff; box-shadow: 4px 4px 0 rgba(16,17,19,.05); }
+    .pub-card.featured { background: var(--sm-featured); border-left: 4px solid var(--sm-accent); }
+    .pub-top { display: flex; justify-content: space-between; gap: .8rem; align-items: flex-start; }
+    .pub-title { font-size: 1rem; line-height: 1.35; font-weight: 800; color: var(--sm-ink); }
+    .pub-authors { color: var(--sm-muted); font-size: .83rem; line-height: 1.45; margin: .22rem 0 .28rem; }
+    .pub-venue { font-size: .84rem; color: var(--sm-muted); font-style: italic; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .45rem; }
+    .pub-links a { font-size: .78rem; font-weight: 800; color: var(--sm-accent); border-bottom: 1px solid rgba(var(--sm-accent-rgb), .3); text-decoration: none; }
+    .pub-links a:hover { color: var(--sm-sage); border-bottom-color: var(--sm-sage); text-decoration: none; }
+    .tag { flex-shrink: 0; padding: .14rem .42rem; font-size: .66rem; font-weight: 900; letter-spacing: 0; text-transform: uppercase; background: var(--sm-lime); color: var(--sm-ink); }
+
+    .news-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .72rem; }
+    .news-grid.is-collapsed .news-entry:nth-of-type(n+6) { display: none; }
+    .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .72rem; }
+    .news-entry, .service-entry { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: .7rem; font-size: .88rem; line-height: 1.45; background: #fff; border: 1px solid var(--sm-line); padding: .76rem .82rem; }
+    .news-entry { margin: 0; }
+    .news-date { color: var(--sm-accent); font-weight: 800; font-size: .78rem; font-variant-numeric: tabular-nums; }
+    .service-entry strong { color: var(--sm-ink); }
+    .service-entry strong { display: block; margin-bottom: .08rem; }
+    .service-entry span { color: var(--sm-muted); display: block; font-size: .82rem; }
+    footer { margin-top: 2.4rem; padding: 1rem 0; background: var(--sm-ink); color: #fff; font-size: .8rem; }
+    footer .container { color: inherit; }
+
+    html[data-theme='dark'] body { background: linear-gradient(180deg, rgba(var(--sm-accent-rgb), .08) 0, transparent 340px), var(--global-bg-color); }
+    html[data-theme='dark'] .hero-title, html[data-theme='dark'] .hero-lede, html[data-theme='dark'] .statement-banner, html[data-theme='dark'] .profile-name, html[data-theme='dark'] .pub-title, html[data-theme='dark'] .service-entry strong, html[data-theme='dark'] .section-title h2 { color: var(--global-text-color); }
+    html[data-theme='dark'] .profile-line, html[data-theme='dark'] .pub-authors, html[data-theme='dark'] .pub-venue, html[data-theme='dark'] .service-entry span { color: #b7c0c9; }
+    html[data-theme='dark'] .pub-card, html[data-theme='dark'] .hero-links a, html[data-theme='dark'] .research-visual { background: rgba(255,255,255,.03); }
+    html[data-theme='dark'] .pub-card.featured { background: linear-gradient(90deg, rgba(192,47,138,.14), rgba(255,255,255,.03)); }
+    html[data-theme='dark'] .profile-panel { background: rgba(255,255,255,.035); }
+
+    @media (max-width: 900px) {
+      .hero-title { font-size: 4.1rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-grid::before { right: 0; top: 5rem; max-width: 88vw; }
+      .profile-panel { position: static; transform: none; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 1rem; box-shadow: 8px 8px 0 rgba(var(--sm-lime-rgb), .78); }
+      .profile-photo { width: 150px; height: 150px; }
+    }
+
+    @media (max-width: 680px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .home-shell { padding: .9rem 1rem 3rem; }
+      .hero-grid::before { display: none; }
+      .hero-title { font-size: 3rem; max-width: none; }
+      .hero-subtitle { font-size: 1.25rem; transform: none; }
+      .hero-lede { font-size: 1.03rem; }
+      .statement-banner { font-size: 1.2rem; }
+      .news-grid,
+      .service-grid { grid-template-columns: 1fr; }
+      .pub-top { display: block; }
+      .tag { display: inline-block; margin-top: .35rem; }
+      .profile-panel { display: block; box-shadow: none; }
+      .profile-photo { width: 138px; height: 138px; }
+      .research-visual { width: 100%; transform: none; }
+      .news-entry, .service-entry { grid-template-columns: 72px minmax(0, 1fr); }
+    }
+  </style>
+</head>
+<body class="fixed-top-nav">
+<header>
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Stephanie</span> Maaz</a>
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item active"><a class="nav-link" href="/">About <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="/conferences.html">Conferences</a></li>
+        </ul>
       </div>
-      <div class="interests-row">
-        <span class="chip"><i class="fa-solid fa-shuffle"></i> Reconfiguration</span>
-        <span class="chip"><i class="fa-solid fa-magnifying-glass"></i> Solution Discovery</span>
-        <span class="chip"><i class="fa-solid fa-diagram-project"></i> Dynamic Graph Problems</span>
+    </div>
+  </nav>
+  <progress id="progress" value="0"><div class="progress-container"><span class="progress-bar"></span></div></progress>
+</header>
+
+<div class="container home-shell" role="main">
+  <article>
+    <div class="hero-grid">
+      <main>
+        <h1 class="hero-title">Stephanie <span>Maaz</span></h1>
+        <div class="hero-subtitle">Algorithms for changing systems.</div>
+        <p class="hero-lede">
+          I am <strong>Stephanie Maaz</strong>, a researcher in theoretical computer science / mathematics.
+          I work on algorithms, with a current focus on dynamic and sequential settings where solutions have
+          to adapt rather than simply exist.
+        </p>
+        <p class="hero-lede">
+          In 2025, I completed my PhD at the <a href="https://uwaterloo.ca" rel="external nofollow noopener" target="_blank">University of Waterloo</a>
+          in the <a href="https://algcomp.uwaterloo.ca/" rel="external nofollow noopener" target="_blank">Algorithms and Complexity Group</a>,
+          advised by <a href="https://cs.uwaterloo.ca/~nishi/" rel="external nofollow noopener" target="_blank">Naomi Nishimura</a>
+          and <a href="https://www.aub.edu.lb/pages/profile.aspx?MemberId=aa368" rel="external nofollow noopener" target="_blank">Amer E. Mouawad</a>.
+        </p>
+
+        <div class="hero-links">
+          <a href="mailto:smaaz@uwaterloo.ca"><i class="fa-solid fa-envelope"></i>Email</a>
+          <a href="https://scholar.google.com/citations?user=BTUXX9AAAAAJ" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i>Google Scholar</a>
+          <a href="https://dblp.org/pid/298/2113.html" rel="external nofollow noopener" target="_blank"><i class="ai ai-dblp"></i>DBLP</a>
+          <a href="https://github.com/stephaniemaaz" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+          <a href="https://orcid.org/0000-0001-7188-8834" rel="external nofollow noopener" target="_blank"><i class="ai ai-orcid"></i>ORCID</a>
+        </div>
+
+        <div class="research-visual">
+          <div class="research-crop">
+            <img src="/assets/img/dynamic-discovery-overview.png" alt="Examples of dynamic discovery problems: neutral atoms, facility location, and clustering.">
+          </div>
+        </div>
+
+        <div class="statement-banner">
+          <em>Computing a solution is only half the story.</em> In many settings, whether relatively static or highly dynamic, and whether geometric, graph-based, or otherwise, the solution must also be repaired or reconfigured cost-effectively.
+        </div>
+
+        <section id="publications">
+          <div class="section-title">
+            <h2>Publications</h2>
+            <div class="section-actions">
+              <button class="toggle-list" type="button" data-toggle-list="pub-list" data-show-text="see all" data-hide-text="collapse" aria-controls="pub-list" aria-expanded="false">see all</button>
+            </div>
+          </div>
+          <div class="pub-list is-collapsed" id="pub-list">
+            <div class="pub-card featured">
+              <div class="pub-top">
+                <div>
+                  <div class="pub-title">FO Value Discovery and Partial Vertex Cover Discovery</div>
+                  <div class="pub-authors">with Enna Gerhard, Pascale Schott, Sebastian Siebertz, Jan Wodtke</div>
+                  <div class="pub-venue">arXiv 2026</div>
+                </div>
+                <span class="tag">preprint</span>
+              </div>
+              <div class="pub-links"><a href="https://arxiv.org/abs/2607.06446" rel="external nofollow noopener" target="_blank">arXiv</a></div>
+            </div>
+
+            <div class="pub-card featured">
+              <div class="pub-top">
+                <div>
+                  <div class="pub-title">Separating Feasibility and Movement in Solution Discovery: The Case of Path Discovery</div>
+                  <div class="pub-authors">with Hanno von Bergen, Larissa Fastenau, Enna Gerhard, Nicola Lorenz, Amer E. Mouawad, Roman Rabinovich, Nicole Schirrmacher, Daniel Schmand, Sebastian Siebertz, Mai Trinh</div>
+                  <div class="pub-venue">arXiv 2026</div>
+                </div>
+                <span class="tag">preprint</span>
+              </div>
+              <div class="pub-links"><a href="https://arxiv.org/abs/2604.27802" rel="external nofollow noopener" target="_blank">arXiv</a></div>
+            </div>
+
+            <div class="pub-card featured">
+              <div class="pub-top">
+                <div>
+                  <div class="pub-title">On Algorithmic Meta-Theorems for Solution Discovery: Tractability and Barriers</div>
+                  <div class="pub-authors">with Nicolas Bousquet, Amer E. Mouawad, Naomi Nishimura, Sebastian Siebertz</div>
+                  <div class="pub-venue">arXiv 2025</div>
+                </div>
+                <span class="tag">preprint</span>
+              </div>
+              <div class="pub-links"><a href="https://arxiv.org/abs/2510.17344" rel="external nofollow noopener" target="_blank">arXiv</a></div>
+            </div>
+
+            <div class="pub-card">
+              <div class="pub-top">
+                <div>
+                  <div class="pub-title">Kernelization Complexity of Solution Discovery Problems</div>
+                  <div class="pub-authors">with Mario Grobler, Amer E. Mouawad, Naomi Nishimura, Vijayaragunathan Ramamoorthi, Sebastian Siebertz</div>
+                  <div class="pub-venue">ISAAC 2024</div>
+                </div>
+                <span class="tag">conference</span>
+              </div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2409.17250" rel="external nofollow noopener" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.4230/LIPIcs.ISAAC.2024.36" rel="external nofollow noopener" target="_blank">conference</a>
+                <a href="/assets/pdf/maaz_isaac2024.pdf">slides</a>
+              </div>
+            </div>
+
+            <div class="pub-card">
+              <div class="pub-top">
+                <div>
+                  <div class="pub-title">Solution Discovery via Reconfiguration for Problems in P</div>
+                  <div class="pub-authors">with Mario Grobler, Nicole Megow, Amer E. Mouawad, Vijayaragunathan Ramamoorthi, Daniel Schmand, Sebastian Siebertz</div>
+                  <div class="pub-venue">ICALP 2024</div>
+                </div>
+                <span class="tag">conference</span>
+              </div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2311.13478" rel="external nofollow noopener" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.4230/LIPIcs.ICALP.2024.76" rel="external nofollow noopener" target="_blank">conference</a>
+              </div>
+            </div>
+
+            <div class="pub-card">
+              <div class="pub-top">
+                <div>
+                  <div class="pub-title">Parameterized Complexity of Reconfiguration of Atoms</div>
+                  <div class="pub-authors">with Alexandre Cooper, Amer E. Mouawad, Naomi Nishimura</div>
+                  <div class="pub-venue">WALCOM 2022; Algorithmica 2024</div>
+                </div>
+                <span class="tag">journal</span>
+              </div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2107.12267" rel="external nofollow noopener" target="_blank">arXiv</a>
+                <a href="https://doi.org/10.1007/978-3-030-96731-4_22" rel="external nofollow noopener" target="_blank">conference</a>
+                <a href="https://doi.org/10.1007/s00453-024-01262-z" rel="external nofollow noopener" target="_blank">journal</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-title">
+            <h2>Selected News</h2>
+            <button class="toggle-list" type="button" data-toggle-list="news-list" data-show-text="see all" data-hide-text="collapse" aria-controls="news-list" aria-expanded="false">see all</button>
+          </div>
+          <div class="news-grid is-collapsed" id="news-list">
+            <div class="news-entry"><span class="news-date">Oct 2025</span><span>Successfully defended my <a href="https://uwspace.uwaterloo.ca/bitstreams/9e42a37a-0898-421b-8062-9bff166d33b0/download" rel="external nofollow noopener" target="_blank">PhD thesis</a>.</span></div>
+            <div class="news-entry"><span class="news-date">Sep 2025</span><span>Gave a seminar on <a href="https://cs.uwaterloo.ca/events/phd-seminar-algorithms-and-complexity-surveying-graph-parameters-for-algorithmic-meta-theorems-for-solution-discovery" rel="external nofollow noopener" target="_blank">Surveying Graph Parameters for Algorithmic Meta-Theorems for Solution Discovery</a> at UWaterloo.</span></div>
+            <div class="news-entry"><span class="news-date">Dec 2024</span><span>Presented Kernelization Complexity of Solution Discovery Problems at ISAAC 2024.</span></div>
+            <div class="news-entry"><span class="news-date">Dec 2024</span><span>Gave a seminar on <a href="https://cs.uwaterloo.ca/events/phd-seminar-algorithms-and-complexity-solution-discovery-for-source-problems-in-p" rel="external nofollow noopener" target="_blank">Solution Discovery for Source Problems in P</a> at UWaterloo.</span></div>
+            <div class="news-entry"><span class="news-date">Nov 2024</span><span>Gave a talk on kernelization for the Mathematics for Theoretical Computer Science course at <a href="https://mbzuai.ac.ae/" rel="external nofollow noopener" target="_blank">MBZUAI</a> in Abu Dhabi.</span></div>
+            <div class="news-entry"><span class="news-date">Nov 2024</span><span>Gave a seminar on <a href="https://cs.uwaterloo.ca/events/phd-seminar-algorithms-and-complexity-kernelization-complexity-of-some-solution-discovery-problems" rel="external nofollow noopener" target="_blank">Kernelization Complexity of Some Solution Discovery Problems</a> at UWaterloo.</span></div>
+            <div class="news-entry"><span class="news-date">Jan 2024</span><span>Gave a talk at the 1st Villeurbanne Reconfiguration Workshop in Lyon.</span></div>
+            <div class="news-entry"><span class="news-date">May 2023</span><span>Became graduate student representative on the Senate at UWaterloo and a member of the Finance Committee.</span></div>
+            <div class="news-entry"><span class="news-date">May 2022</span><span>Gave a talk at the Banff International Research Station in Banff, Canada.</span></div>
+            <div class="news-entry"><span class="news-date">Mar 2022</span><span>Gave a talk on Parameterized Complexity of Reconfiguration of Atoms at WALCOM 2022.</span></div>
+            <div class="news-entry"><span class="news-date">Sep 2021</span><span>Received the merit-based International Master's Award of Excellence.</span></div>
+            <div class="news-entry"><span class="news-date">Jun 2021</span><span>Received the merit-based Henri Qais Naccache Computer Science Student Development Fund award.</span></div>
+            <div class="news-entry"><span class="news-date">May 2021</span><span>Graduated with High Distinction (4.0/4.0) with a BSc in CS from AUB.</span></div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="profile-panel">
+        <img src="/assets/img/steph-profile2.jpeg" class="profile-photo" alt="Stephanie Maaz" loading="eager">
+        <div>
+          <div class="profile-name">Stephanie Maaz</div>
+          <div class="profile-line">PhD, Computer Science<br>University of Waterloo</div>
+          <div class="profile-line">Abu Dhabi, UAE<br><a href="mailto:smaaz@uwaterloo.ca">smaaz@uwaterloo.ca</a></div>
+
+          <div class="side-block">
+            <h2>Research Interests</h2>
+            <p>Algorithms, reconfiguration, solution discovery, dynamic graph algorithms, meta-theorems, logic in CS, parameterized complexity, approximation, kernelization, learning-augmented algorithms.</p>
+          </div>
+
+          <div class="side-block">
+            <h2>Education</h2>
+            <div><span class="year">2021-2025</span>(Direct) PhD, University of Waterloo</div>
+            <div><span class="year">2019-2021</span>BSc CS, American University of Beirut</div>
+            <div><span class="year">2013-2016</span>BBA Finance (Investment Management), American University of Beirut</div>
+          </div>
+
+          <div class="side-block">
+            <h2>Service &amp; Teaching</h2>
+            <div>Teaching assistant, University of Waterloo</div>
+            <div>Senator and Member of the Finance Committee, University of Waterloo</div>
+            <div>Reviewer: SIDMA, WG, ICALP, IWOCA, ESA, ISAAC, SODA</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section>
+      <div class="section-title"><h2>Selected Service &amp; Teaching</h2></div>
+      <div class="service-grid">
+        <div class="service-entry"><span class="news-date">2021-2024</span><span><strong>Teaching Assistant</strong> University of Waterloo; CS245 Logic and Computation, CS251 Computer Organization & Design.</span></div>
+        <div class="service-entry"><span class="news-date">2023-2025</span><span><strong>Senator and Member of the Finance Committee</strong> University of Waterloo; participated in academic governance and graduate research policy.</span></div>
+        <div class="service-entry"><span class="news-date">2023-2026</span><span><strong>External Reviewer</strong> WG'23, ICALP'25, IWOCA'26, ESA'26, ISAAC'26, SODA'26.</span></div>
+        <div class="service-entry"><span class="news-date">2013-2017</span><span><strong>Community Service</strong> Tutoring, educational and other outreach, and local community-development projects through CCECS/AUB or USAID Lebanon.</span></div>
       </div>
-    </div>
-
-    <div class="section-divider">News <a href="#" class="see-all-link" onclick="event.preventDefault();var l=document.querySelector('.news-list');l.classList.toggle('news-expanded');this.textContent=l.classList.contains('news-expanded')?'(see less)':'(see all)';" id="seeAllNews">(see all)</a></div>
-    <div class="news-list">
-      <div class="news-entry"><span class="news-date">Oct 2025</span>🎓 Successfully defended my <a href="https://uwspace.uwaterloo.ca/bitstreams/9e42a37a-0898-421b-8062-9bff166d33b0/download" rel="external nofollow noopener" target="_blank">PhD thesis</a></div>
-      <div class="news-entry"><span class="news-date">Sep 2025</span>🗣️ Gave a seminar on <a href="https://cs.uwaterloo.ca/events/phd-seminar-algorithms-and-complexity-surveying-graph-parameters-for-algorithmic-meta-theorems-for-solution-discovery" rel="external nofollow noopener" target="_blank">Surveying Graph Parameters for Algorithmic Meta-Theorems for Solution Discovery</a> at UWaterloo</div>
-      <div class="news-entry"><span class="news-date">Dec 2024</span>🗣️ Gave a talk on Kernelization Complexity of Solution Discovery Problems at ISAAC 2024</div>
-      <div class="news-entry"><span class="news-date">Dec 2024</span>🗣️ Gave a seminar on <a href="https://cs.uwaterloo.ca/events/phd-seminar-algorithms-and-complexity-solution-discovery-for-source-problems-in-p" rel="external nofollow noopener" target="_blank">Solution Discovery for Source Problems in P</a> at UWaterloo</div>
-      <div class="news-entry"><span class="news-date">Nov 2024</span>🗣️ Gave a talk on Kernelization for the Mathematics for Theoretical Computer Science course at <a href="https://mbzuai.ac.ae/" rel="external nofollow noopener" target="_blank">MBZUAI</a> in Abu Dhabi</div>
-      <div class="news-entry"><span class="news-date">Nov 2024</span>🗣️ Gave a seminar on <a href="https://cs.uwaterloo.ca/events/phd-seminar-algorithms-and-complexity-kernelization-complexity-of-some-solution-discovery-problems" rel="external nofollow noopener" target="_blank">Kernelization Complexity of Some Solution Discovery Problems</a> at UWaterloo</div>
-      <div class="news-entry"><span class="news-date">Jan 2024</span>🗣️ Gave a talk at the 1st Villeurbanne Reconfiguration Workshop (VRW'24) in Lyon</div>
-      <div class="news-entry"><span class="news-date">May 2023</span>🏛️ Became graduate student representative on the Senate at UWaterloo and a member of the Finance Committee</div>
-      <div class="news-entry"><span class="news-date">May 2022</span>🗣️ Gave a talk at the Banff International Research Station (BIRS'22) in Banff, Canada</div>
-      <div class="news-entry"><span class="news-date">Mar 2022</span>🗣️ Gave a talk on Parameterized Complexity of Reconfiguration of Atoms at WALCOM 2022</div>
-      <div class="news-entry"><span class="news-date">Sep 2021</span>🏅 Received the merit-based International Master's Award of Excellence (IMAE)</div>
-      <div class="news-entry"><span class="news-date">Jun 2021</span>🏅 Received the merit-based Henri Qais Naccache Computer Science Student Development Fund award</div>
-      <div class="news-entry"><span class="news-date">May 2021</span>🎓 Graduated with High Distinction (4.0/4.0) with a BSc in CS from AUB</div>
-    </div>
-
-  </div>
+    </section>
+  </article>
 </div>
-</article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2025 Stephanie Maaz. Last updated: May 22, 2026. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?70d799092f862ad98c7876aa47712e20"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
-    addBackToTop();
-    (function(){var l=document.querySelector('.news-list'),a=document.getElementById('seeAllNews');if(l&&a&&l.querySelectorAll('.news-entry').length<=5){a.style.display='none';}})();
-  </script> </body> </html>
+
+<footer role="contentinfo">
+  <div class="container mt-0">© Copyright 2025 Stephanie Maaz. Last updated: July 20, 2026.</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+<script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+<script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script>
+<script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
+<script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script>
+<script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script>
+<script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script>
+<script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<script async src="https://badge.dimensions.ai/badge.js"></script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script>
+<script src="/assets/js/mathjax-setup.js?70d799092f862ad98c7876aa47712e20"></script>
+<script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script>
+<script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script>
+<script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
+<script>
+  addBackToTop();
+  document.querySelectorAll('[data-toggle-list]').forEach(function(button) {
+    var list = document.getElementById(button.dataset.toggleList);
+    if (!list) return;
+
+    button.addEventListener('click', function() {
+      var expanded = button.getAttribute('aria-expanded') === 'true';
+      list.classList.toggle('is-collapsed', expanded);
+      button.setAttribute('aria-expanded', String(!expanded));
+      button.textContent = expanded ? button.dataset.showText : button.dataset.hideText;
+    });
+  });
+</script>
+</body>
+</html>

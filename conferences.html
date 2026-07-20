@@ -13,70 +13,125 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
 <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
 <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772">
-<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap">
+	<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800,900|Space+Grotesk:500,600,700|Material+Icons&amp;display=swap">
 <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
-<link rel="shortcut icon" href="/assets/img/favicon.png%EF%B8%8F?sm">
-<link rel="stylesheet" href="/assets/css/main.css?bluev1">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=palette3">
+<link rel="shortcut icon" href="/assets/img/favicon.svg?v=palette3">
+	<link rel="stylesheet" href="/assets/css/main.css?palette3">
 <link rel="canonical" href="https://stephaniemaaz.github.io/conferences.html">
 <script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script>
 <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
 <script>initTheme();</script>
-<style>
-  @media (min-width: 1200px) { .container { max-width: 1280px; } }
-  #progress { width: 100% !important; height: 1.5px !important; background: #1F4E79 !important; appearance: none; -webkit-appearance: none; border: none; display: block; }
-  #progress::-webkit-progress-bar { background: #1F4E79 !important; }
-  #progress::-webkit-progress-value { background: #1F4E79 !important; }
-  #progress::-moz-progress-bar { background: #1F4E79 !important; }
-  .filter-bar { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:.5rem; align-items:center; }
-  .filter-label { font-size:.8rem; font-weight:600; color:#888; text-transform:uppercase; letter-spacing:.5px; margin-right:.5rem; min-width:60px; }
-  .filter-tag { padding:.25rem .7rem; border:1px solid #dcdfe3; border-radius:8px; font-size:.8rem; font-weight:500; cursor:pointer; background:transparent; color:inherit; transition:background .15s, color .15s, border-color .15s; user-select:none; }
-  .filter-tag:hover { border-color:#888; }
-  .filter-tag.active { background:#425466; color:#fff; border-color:#425466; }
-  html[data-theme='dark'] .filter-tag.active { background:#9ca3af; color:#1a1a1a; border-color:#9ca3af; }
+	<style>
+	  :root {
+	    /*
+	      Palette 1, saved:
+	      paper #ffffff; cream #f5f7f2; ink #101113; muted #5c625e;
+	      accent #df2d8a; sage #087b5f; lime #e3ff3f.
 
-  .conf-card { border:1px solid rgba(128,128,128,0.2); border-radius:8px; padding:.9rem 1.1rem; margin-bottom:.7rem; transition:opacity .2s; }
-  .conf-card.hidden { display:none; }
-  .conf-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:.75rem; margin-bottom:.15rem; }
-  .conf-name { font-size:1.05rem; font-weight:700; }
-  .conf-name a { color:inherit; }
-  .conf-full-name { font-size:.8rem; color:#888; margin-bottom:.3rem; }
-  .conf-meta { font-size:.82rem; color:#666; margin-bottom:.5rem; }
-  html[data-theme='dark'] .conf-meta { color:#aaa; }
-  html[data-theme='dark'] .conf-full-name { color:#aaa; }
-  .conf-meta i { width:14px; text-align:center; margin-right:.2rem; }
-  .conf-meta span.meta-item { margin-right:1.1rem; }
+	      Palette 2, saved:
+	      paper #fffefd; cream #f4f0ff; ink #111217; muted #62606a;
+	      accent #ff4f3e; sage #006d6a; lime #a9ffcb.
 
-  .conf-tags { display:flex; gap:.3rem; flex-wrap:wrap; flex-shrink:0; }
-  .conf-tag { padding:.12rem .45rem; border-radius:4px; font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.3px; }
-  .conf-tag.algorithms   { background:#E8F5E9; color:#2E7D32; }
-  .conf-tag.complexity   { background:#EAF0F6; color:#1F4E79; }
-  .conf-tag.parameterized{ background:#FFF3E0; color:#E65100; }
-  .conf-tag.approximation{ background:#E0F2F1; color:#00695C; }
-  .conf-tag.logic        { background:#F3E5F5; color:#6A1B9A; }
-  .conf-tag.distributed  { background:#E3F2FD; color:#1565C0; }
-  .conf-tag.geometry     { background:#FFF8E1; color:#F57F17; }
-  .conf-tag.combinatorial{ background:#EDE7F6; color:#4527A0; }
-  .conf-tag.concurrency  { background:#E8EAF6; color:#283593; }
-  .conf-tag.region       { background:#ECEFF1; color:#37474F; border:1px dashed #B0BEC5; }
-  html[data-theme='dark'] .conf-tag { opacity:.85; }
+	      Palette 3, live:
+	      paper #fffefd; cream #f7f3f8; ink #171418; muted #696168;
+	      accent #b84a72; sage #4f7f67; lime #d9e8b4.
+	    */
+	    --global-theme-color: #b84a72;
+	    --global-hover-color: #4f7f67;
+	    --global-code-bg-color: rgba(184, 74, 114, .08);
+	    --sm-paper: #fffefd;
+	    --sm-cream: #f7f3f8;
+	    --sm-ink: #171418;
+	    --sm-muted: #696168;
+	    --sm-accent: #b84a72;
+	    --sm-accent-rgb: 184, 74, 114;
+	    --sm-sage: #4f7f67;
+	    --sm-lime: #d9e8b4;
+	    --sm-lime-rgb: 217, 232, 180;
+	    --sm-line: rgba(17, 17, 17, .14);
+	    --sm-font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+	    --sm-font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+	  }
+	  @media (min-width: 1200px) { .container { max-width: 1180px; } }
+	  body {
+	    background: linear-gradient(180deg, var(--sm-paper) 0, var(--sm-paper) 520px, var(--sm-cream) 100%);
+	    color: var(--sm-ink);
+	    font-family: var(--sm-font-body);
+	  }
+	  body.fixed-top-nav { padding-top: 56px; }
+	  #progress { width: 100% !important; height: 2px !important; background: var(--sm-accent) !important; appearance: none; -webkit-appearance: none; border: none; display: block; }
+	  #progress::-webkit-progress-bar { background: var(--sm-accent) !important; }
+	  #progress::-webkit-progress-value { background: var(--sm-accent) !important; }
+	  #progress::-moz-progress-bar { background: var(--sm-accent) !important; }
+	  .navbar { background: rgba(255,255,255,.92) !important; backdrop-filter: blur(14px); border-bottom: 1px solid var(--sm-line); font-family: var(--sm-font-body); }
+	  .navbar-brand, .nav-link { font-family: var(--sm-font-body); }
+	  .conference-shell { padding: 2.35rem 0 3.4rem; }
+	  .post article { max-width: 100%; }
+	  .conference-title { font-family: var(--sm-font-display); font-size: clamp(2.35rem, 6vw, 4.8rem); line-height: .95; margin: 0 0 1.2rem; color: var(--sm-ink); font-weight: 700; letter-spacing: 0; }
+	  .filter-bar { display:flex; flex-wrap:wrap; gap:.45rem; margin:0; padding:.72rem 0; align-items:center; border-top:1px solid var(--sm-line); }
+	  .filter-label { font-size:.78rem; font-weight:800; color:var(--sm-accent); text-transform:uppercase; letter-spacing:0; margin-right:.35rem; min-width:62px; }
+	  .filter-tag { padding:.28rem .68rem; border:1px solid var(--sm-line); border-radius:0; font-size:.8rem; font-weight:700; cursor:pointer; background:#fff; color:var(--sm-ink); transition:background .15s, color .15s, border-color .15s, box-shadow .15s; user-select:none; }
+	  .filter-tag:hover { border-color:var(--sm-accent); color:var(--sm-accent); }
+	  .filter-tag.active { background:var(--sm-lime); color:var(--sm-ink); border-color:var(--sm-ink); box-shadow:3px 3px 0 rgba(16,17,19,.12); }
 
-  .deadline-list { display:flex; flex-direction:column; gap:.25rem; }
-  .deadline-row { display:flex; align-items:center; justify-content:space-between; font-size:.82rem; padding:.2rem .45rem; border-radius:4px; gap:.5rem; flex-wrap:wrap; }
-  .deadline-row.upcoming { background:rgba(46,125,50,0.08); border:1px solid rgba(46,125,50,0.25); }
-  .deadline-row.passed { color:#999; opacity:.7; }
-  .deadline-label { font-weight:600; min-width:60px; }
-  .deadline-date { flex:1; margin-left:.4rem; }
-  .countdown { font-weight:600; font-size:.78rem; white-space:nowrap; }
-  .countdown.upcoming { color:#2E7D32; }
-  .countdown.passed   { color:#999; }
-  .countdown.imminent { color:#C62828; }
-  .deadline-clock { color:#2E7D32; margin-right:.25rem; }
-  .deadline-clock.imminent { color:#C62828; }
+	  .conf-card { border:1px solid var(--sm-line); border-left:4px solid var(--sm-accent); background:#fff; padding:.95rem 1rem; margin-bottom:.75rem; transition:opacity .2s; box-shadow:4px 4px 0 rgba(16,17,19,.05); }
+	  .conf-card.hidden { display:none; }
+	  .conf-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:.85rem; margin-bottom:.2rem; }
+	  .conf-name { font-family:var(--sm-font-display); font-size:1.12rem; line-height:1.2; font-weight:700; }
+	  .conf-name a { color:inherit; text-decoration:none; }
+	  .conf-name a:hover { color:var(--sm-accent); text-decoration:none; }
+	  .conf-full-name { font-size:.83rem; color:var(--sm-muted); margin-bottom:.34rem; }
+	  .conf-meta { font-size:.82rem; color:var(--sm-muted); margin-bottom:.55rem; }
+	  .conf-meta i { width:14px; text-align:center; margin-right:.2rem; color:var(--sm-accent); }
+	  .conf-meta span.meta-item { margin-right:1.1rem; }
 
-  .section-divider { margin:1.5rem 0 .8rem; padding-bottom:.4rem; border-bottom:2px solid rgba(128,128,128,0.2); font-size:.85rem; font-weight:600; color:#999; text-transform:uppercase; letter-spacing:.5px; }
-  .no-results { text-align:center; color:#999; padding:2rem; font-size:.9rem; display:none; }
-  .note { font-size:.78rem; color:#999; font-style:italic; margin-top:.5rem; }
-</style>
+	  .conf-tags { display:flex; gap:.3rem; flex-wrap:wrap; flex-shrink:0; justify-content:flex-end; }
+	  .conf-tag { padding:.14rem .45rem; border-radius:0; font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:0; }
+	  .conf-tag.algorithms   { background:var(--sm-lime); color:var(--sm-ink); }
+	  .conf-tag.complexity   { background:#ffd8ea; color:#8d1555; }
+	  .conf-tag.parameterized{ background:#e0f5ef; color:var(--sm-sage); }
+	  .conf-tag.approximation{ background:#f3eefc; color:#5633a6; }
+	  .conf-tag.logic        { background:#fff0a6; color:#6f5400; }
+	  .conf-tag.distributed  { background:#e8f1ff; color:#23406b; }
+	  .conf-tag.geometry     { background:#f4eadf; color:#6b4c2f; }
+	  .conf-tag.combinatorial{ background:#e9f6e8; color:#305d34; }
+	  .conf-tag.concurrency  { background:#f0f0f0; color:#34373b; }
+	  .conf-tag.region       { background:#fff; color:var(--sm-muted); border:1px dashed var(--sm-line); }
+
+	  .deadline-list { display:flex; flex-direction:column; gap:.3rem; }
+	  .deadline-row { display:flex; align-items:center; justify-content:space-between; font-size:.82rem; padding:.3rem .5rem; border-radius:0; gap:.5rem; flex-wrap:wrap; border:1px solid transparent; }
+	  .deadline-row.upcoming { background:rgba(var(--sm-lime-rgb), .24); border-color:rgba(16,17,19,.12); }
+	  .deadline-row.passed { color:#8a8e89; opacity:.72; background:#f7f7f4; }
+	  .deadline-label { font-weight:800; min-width:60px; }
+	  .deadline-date { flex:1; margin-left:.4rem; }
+	  .countdown { font-weight:800; font-size:.78rem; white-space:nowrap; }
+	  .countdown.upcoming { color:var(--sm-sage); }
+	  .countdown.passed { color:#8a8e89; }
+	  .countdown.imminent { color:#c72d4d; }
+	  .deadline-clock { color:var(--sm-sage); margin-right:.25rem; }
+	  .deadline-clock.imminent { color:#c72d4d; }
+
+	  .section-divider { margin:1.7rem 0 .85rem; padding-bottom:.35rem; border-bottom:1px solid var(--sm-line); font-family:var(--sm-font-display); font-size:1.05rem; font-weight:700; color:var(--sm-ink); text-transform:none; letter-spacing:0; }
+	  .section-divider::before { content:""; display:inline-block; width:2.2rem; height:3px; background:var(--sm-accent); margin-right:.6rem; vertical-align:middle; transform:translateY(-.12rem); }
+	  .no-results { text-align:center; color:var(--sm-muted); padding:2rem; font-size:.9rem; display:none; }
+	  .deadline-rule { margin:.45rem 0 1rem; color:var(--sm-muted); font-size:.84rem; line-height:1.45; }
+	  .note { font-size:.78rem; color:var(--sm-muted); font-style:italic; margin-top:1rem; }
+	  footer { margin-top:2.4rem; padding:1rem 0; background:var(--sm-ink); color:#fff; font-size:.8rem; }
+	  footer .container { color:inherit; }
+
+	  html[data-theme='dark'] body { background: linear-gradient(180deg, rgba(var(--sm-accent-rgb), .08) 0, transparent 340px), var(--global-bg-color); }
+	  html[data-theme='dark'] .conference-title, html[data-theme='dark'] .conf-name, html[data-theme='dark'] .section-divider { color: var(--global-text-color); }
+	  html[data-theme='dark'] .conf-card, html[data-theme='dark'] .filter-tag { background:rgba(255,255,255,.03); }
+	  html[data-theme='dark'] .conf-full-name, html[data-theme='dark'] .conf-meta, html[data-theme='dark'] .note { color:#b7c0c9; }
+
+	  @media (max-width: 680px) {
+	    .conference-shell { padding: 1.1rem 1rem 3rem; }
+	    .conf-card-header { display:block; }
+	    .conf-tags { justify-content:flex-start; margin-top:.55rem; }
+	    .conf-meta span.meta-item { display:block; margin-right:0; margin-bottom:.2rem; }
+	  }
+	</style>
 </head>
 <body class="fixed-top-nav ">
 <header>
@@ -104,9 +159,10 @@
   <progress id="progress" value="0"><div class="progress-container"><span class="progress-bar"></span></div></progress>
 </header>
 
-<div class="container mt-5" role="main">
+<div class="container conference-shell" role="main">
   <div class="post">
     <article>
+      <h1 class="conference-title">Conference Deadlines</h1>
       <div class="filter-bar">
         <span class="filter-label">Topic</span>
         <span class="filter-tag active" data-group="topic" data-tag="all">All</span>
@@ -120,30 +176,31 @@
         <span class="filter-tag" data-group="topic" data-tag="combinatorial">Combinatorial</span>
         <span class="filter-tag" data-group="topic" data-tag="concurrency">Concurrency</span>
       </div>
-      <div class="filter-bar">
-        <span class="filter-label">Region</span>
-        <span class="filter-tag active" data-group="region" data-tag="all">All</span>
+	      <div class="filter-bar">
+	        <span class="filter-label">Region</span>
+	        <span class="filter-tag active" data-group="region" data-tag="all">All</span>
         <span class="filter-tag" data-group="region" data-tag="north-america">North America</span>
         <span class="filter-tag" data-group="region" data-tag="europe">Europe</span>
         <span class="filter-tag" data-group="region" data-tag="asia-pacific">Asia-Pacific</span>
-        <span class="filter-tag" data-group="region" data-tag="international">International / Rotating</span>
-      </div>
+	        <span class="filter-tag" data-group="region" data-tag="international">International / Rotating</span>
+	      </div>
+	      <p class="deadline-rule">Upcoming is based only on official deadlines for the linked edition of the conference. I do not list projected next-cycle dates as exact deadlines; if a future edition has not posted a CFP yet, it stays off this tracker until there is an official date.</p>
 
-      <div id="conf-list"></div>
+	      <div id="conf-list"></div>
       <div id="no-results" class="no-results">No conferences match the selected filters.</div>
 
-      <p class="note">Deadlines and dates verified against official conference sites as of June 22, 2026. Deadlines marked &ldquo;Expected&rdquo; are next-edition deadlines projected from prior cycles (CFP not yet posted). Always verify on the official conference website before submitting.</p>
+      <p class="note">Deadlines and dates verified against official conference sites as of July 20, 2026. Always verify on the official conference website before submitting.</p>
     </article>
   </div>
 </div>
 
-<footer class="fixed-bottom" role="contentinfo">
-  <div class="container mt-0">© Copyright 2025 Stephanie Maaz. Last updated: June 22, 2026.</div>
+<footer role="contentinfo">
+  <div class="container mt-0">© Copyright 2025 Stephanie Maaz. Last updated: July 20, 2026.</div>
 </footer>
 
 <script>
-// Verified against official conference sites as of 2026-06-22.
-// `Expected` = next-edition deadline projected from prior cycles (no CFP yet).
+// Verified against official conference sites as of 2026-07-20.
+// Only official linked-edition submission deadlines are listed.
 const CONFERENCES = [
   // ——— Theory Flagship ———
   {
@@ -153,8 +210,7 @@ const CONFERENCES = [
     link: "https://acm-stoc.org/stoc2026/",
     location: "Salt Lake City, UT, USA", dates: "Jun 22–27, 2026",
     deadlines: [
-      { label: "STOC 2026 Paper", date: "2025-11-04" },
-      { label: "STOC 2027 Paper", date: "2026-11-03", note: "Expected" }
+      { label: "STOC 2026 Paper", date: "2025-11-04" }
     ]
   },
   {
@@ -164,8 +220,7 @@ const CONFERENCES = [
     link: "https://focs.computer.org/2026/",
     location: "New York City, NY, USA", dates: "Nov 8–11, 2026",
     deadlines: [
-      { label: "FOCS 2026 Paper", date: "2026-04-01" },
-      { label: "FOCS 2027 Paper", date: "2027-04-01", note: "Expected" }
+      { label: "FOCS 2026 Paper", date: "2026-04-01" }
     ]
   },
   {
@@ -186,8 +241,7 @@ const CONFERENCES = [
     location: "Egham, UK (Royal Holloway)", dates: "Jul 7–10, 2026",
     deadlines: [
       { label: "ICALP 2026 Abstract", date: "2026-02-03" },
-      { label: "ICALP 2026 Paper", date: "2026-02-06" },
-      { label: "ICALP 2027 Paper", date: "2027-02-05", note: "Expected" }
+      { label: "ICALP 2026 Paper", date: "2026-02-06" }
     ]
   },
   {
@@ -195,9 +249,10 @@ const CONFERENCES = [
     fullName: "Innovations in Theoretical Computer Science",
     topics: ["algorithms", "complexity"], region: "international",
     link: "http://itcs-conf.org/",
-    location: "TBA", dates: "Jan 2027 (TBA)",
+    location: "Berkeley, CA, USA", dates: "Jan 12–15, 2027",
     deadlines: [
-      { label: "ITCS 2027 Paper", date: "2026-09-06", note: "Expected (CFP not yet posted)" }
+      { label: "ITCS 2027 Abstract", date: "2026-09-02" },
+      { label: "ITCS 2027 Paper", date: "2026-09-04" }
     ]
   },
   {
@@ -207,8 +262,7 @@ const CONFERENCES = [
     link: "https://computationalcomplexity.org/Archive/2026/cfp.html",
     location: "Lisbon, Portugal", dates: "Aug 3–6, 2026",
     deadlines: [
-      { label: "CCC 2026 Paper", date: "2026-02-06" },
-      { label: "CCC 2027 Paper", date: "2027-02-05", note: "Expected" }
+      { label: "CCC 2026 Paper", date: "2026-02-06" }
     ]
   },
 
@@ -221,18 +275,17 @@ const CONFERENCES = [
     location: "L'Aquila, Italy (ALGO 2026)", dates: "Aug 31 – Sep 4, 2026",
     deadlines: [
       { label: "ESA 2026 Abstract", date: "2026-04-21" },
-      { label: "ESA 2026 Paper", date: "2026-04-23" },
-      { label: "ESA 2027 Paper", date: "2027-04-22", note: "Expected" }
+      { label: "ESA 2026 Paper", date: "2026-04-23" }
     ]
   },
   {
     id: "stacs", name: "STACS 2027",
     fullName: "Symposium on Theoretical Aspects of Computer Science",
     topics: ["algorithms", "complexity"], region: "europe",
-    link: "https://www.stacs-conf.org/",
-    location: "TBA, Europe", dates: "Mar 2027 (TBA)",
+    link: "https://events.gwdg.de/event/1460/",
+    location: "Göttingen, Germany", dates: "Mar 8–12, 2027",
     deadlines: [
-      { label: "STACS 2027 Paper", date: "2026-10-01", note: "Expected (CFP not yet posted)" }
+      { label: "STACS 2027 Paper", date: "2026-10-11" }
     ]
   },
   {
@@ -242,8 +295,7 @@ const CONFERENCES = [
     link: "https://mfcs2026.irif.fr/",
     location: "Paris, France", dates: "Aug 24–28, 2026",
     deadlines: [
-      { label: "MFCS 2026 Paper", date: "2026-04-24" },
-      { label: "MFCS 2027 Paper", date: "2027-04-23", note: "Expected" }
+      { label: "MFCS 2026 Paper", date: "2026-04-24" }
     ]
   },
   {
@@ -254,8 +306,7 @@ const CONFERENCES = [
     location: "Copenhagen, Denmark", dates: "Jun 17–19, 2026",
     deadlines: [
       { label: "SWAT 2026 Abstract", date: "2026-02-16" },
-      { label: "SWAT 2026 Paper", date: "2026-02-20" },
-      { label: "SWAT 2028 Paper", date: "2028-02-18", note: "Biennial (even years), Expected" }
+      { label: "SWAT 2026 Paper", date: "2026-02-20" }
     ]
   },
   {
@@ -266,8 +317,7 @@ const CONFERENCES = [
     location: "Kortrijk, Belgium", dates: "Jun 2–4, 2026",
     deadlines: [
       { label: "WG 2026 Abstract", date: "2026-02-01" },
-      { label: "WG 2026 Paper", date: "2026-02-04" },
-      { label: "WG 2027 Paper", date: "2027-02-03", note: "Expected" }
+      { label: "WG 2026 Paper", date: "2026-02-04" }
     ]
   },
   {
@@ -289,8 +339,7 @@ const CONFERENCES = [
     location: "Liverpool, UK (CONFEST 2026)", dates: "Sep 1–4, 2026 (+ workshops Sep 5)",
     deadlines: [
       { label: "CONCUR 2026 Abstract", date: "2026-04-20" },
-      { label: "CONCUR 2026 Paper", date: "2026-04-27" },
-      { label: "CONCUR 2027 Paper", date: "2027-04-26", note: "Expected" }
+      { label: "CONCUR 2026 Paper", date: "2026-04-27" }
     ]
   },
 
@@ -312,8 +361,7 @@ const CONFERENCES = [
     link: "https://event.ntu.edu.sg/cocoon2026",
     location: "Singapore (NTU)", dates: "Jul 23–25, 2026",
     deadlines: [
-      { label: "COCOON 2026 Paper", date: "2026-03-04" },
-      { label: "COCOON 2027 Paper", date: "2027-03-04", note: "Expected" }
+      { label: "COCOON 2026 Paper", date: "2026-03-04" }
     ]
   },
   {
@@ -331,24 +379,14 @@ const CONFERENCES = [
     id: "walcom", name: "WALCOM 2027",
     fullName: "International Conference and Workshops on Algorithms and Computation",
     topics: ["algorithms"], region: "asia-pacific",
-    link: "http://www.walcom-conference.org/",
-    location: "TBA, Asia", dates: "Feb/Mar 2027 (TBA)",
+    link: "https://sites.google.com/gapps.ntnu.edu.tw/walcom2027",
+    location: "Taipei, Taiwan", dates: "Mar 24–26, 2027",
     deadlines: [
-      { label: "WALCOM 2027 Paper", date: "2026-10-15", note: "Expected (CFP not yet posted)" }
+      { label: "WALCOM 2027 Paper", date: "2026-09-21" }
     ]
   },
 
   // ——— North American Algorithms ———
-  {
-    id: "wads", name: "WADS 2027",
-    fullName: "Algorithms and Data Structures Symposium",
-    topics: ["algorithms"], region: "north-america",
-    link: "https://www.wads.org/",
-    location: "TBA, North America", dates: "Aug 2027 (TBA)",
-    deadlines: [
-      { label: "WADS 2027 Paper", date: "2027-02-15", note: "Biennial (odd years), Expected" }
-    ]
-  },
   {
     id: "sosa", name: "SOSA 2027",
     fullName: "Symposium on Simplicity in Algorithms (co-located with SODA)",
@@ -367,8 +405,7 @@ const CONFERENCES = [
     location: "Egham, UK (with ICALP/SPAA)", dates: "Jul 6–10, 2026",
     deadlines: [
       { label: "PODC 2026 Abstract", date: "2026-02-11" },
-      { label: "PODC 2026 Paper", date: "2026-02-16" },
-      { label: "PODC 2027 Paper", date: "2027-02-15", note: "Expected" }
+      { label: "PODC 2026 Paper", date: "2026-02-16" }
     ]
   },
 
@@ -392,8 +429,7 @@ const CONFERENCES = [
     link: "https://approxconference.wordpress.com/",
     location: "Boston University, Boston, MA, USA", dates: "Aug 19–21, 2026",
     deadlines: [
-      { label: "APPROX 2026 Paper", date: "2026-05-06" },
-      { label: "APPROX 2027 Paper", date: "2027-05-05", note: "Expected" }
+      { label: "APPROX 2026 Paper", date: "2026-05-06" }
     ]
   },
   {
@@ -403,8 +439,7 @@ const CONFERENCES = [
     link: "https://randomconference.com/random-2026-home/",
     location: "Boston University, Boston, MA, USA (with APPROX)", dates: "Aug 19–21, 2026",
     deadlines: [
-      { label: "RANDOM 2026 Paper", date: "2026-05-06" },
-      { label: "RANDOM 2027 Paper", date: "2027-05-05", note: "Expected" }
+      { label: "RANDOM 2026 Paper", date: "2026-05-06" }
     ]
   },
 
@@ -417,8 +452,7 @@ const CONFERENCES = [
     location: "Lisbon, Portugal (FLoC 2026)", dates: "Jul 20–23, 2026",
     deadlines: [
       { label: "LICS 2026 Abstract", date: "2026-01-15" },
-      { label: "LICS 2026 Paper", date: "2026-01-22" },
-      { label: "LICS 2027 Paper", date: "2027-01-21", note: "Expected" }
+      { label: "LICS 2026 Paper", date: "2026-01-22" }
     ]
   },
 
@@ -444,8 +478,7 @@ const CONFERENCES = [
     location: "Rutgers Univ., New Brunswick, NJ, USA", dates: "Jun 2–5, 2026",
     deadlines: [
       { label: "SoCG 2026 Abstract", date: "2025-11-25" },
-      { label: "SoCG 2026 Paper", date: "2025-12-02" },
-      { label: "SoCG 2027 Paper", date: "2026-12-01", note: "Expected" }
+      { label: "SoCG 2026 Paper", date: "2025-12-02" }
     ]
   },
 
@@ -458,18 +491,7 @@ const CONFERENCES = [
     location: "Clermont-Ferrand, France", dates: "Jun 8–11, 2026 (+ workshop Jun 11–12)",
     deadlines: [
       { label: "IWOCA 2026 Abstract", date: "2026-01-26" },
-      { label: "IWOCA 2026 Paper", date: "2026-02-02" },
-      { label: "IWOCA 2027 Paper", date: "2027-02-01", note: "Expected" }
-    ]
-  },
-  {
-    id: "latin", name: "LATIN 2028",
-    fullName: "Latin American Theoretical Informatics Symposium",
-    topics: ["algorithms"], region: "international",
-    link: "https://latintcs.org/",
-    location: "TBA, Latin America", dates: "Apr/May 2028 (TBA)",
-    deadlines: [
-      { label: "LATIN 2028 Paper", date: "2027-10-15", note: "Biennial (even years), Expected" }
+      { label: "IWOCA 2026 Paper", date: "2026-02-02" }
     ]
   }
 ];
@@ -539,7 +561,7 @@ function renderCard(conf, now, visible) {
       icon = `<i class="fa fa-clock-o deadline-clock${isImminent ? ' imminent' : ''}" aria-hidden="true"></i>`;
     }
     const noteHtml = dl.note ? ` <span style="font-size:.72rem;color:#999;">(${dl.note})</span>` : '';
-    const tilde = dl.note && (dl.note.includes('Expected') || dl.note.includes('Approximate')) ? '~' : '';
+    const tilde = dl.note && dl.note.includes('Approximate') ? '~' : '';
     deadlinesHtml += `
       <div class="deadline-row ${rowClass}">
         <span>${icon}<span class="deadline-label">${dl.label}:</span>
