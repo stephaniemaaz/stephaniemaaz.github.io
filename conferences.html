@@ -127,9 +127,18 @@
 
 	  @media (max-width: 680px) {
 	    .conference-shell { padding: 1.1rem 1rem 3rem; }
+	    .conference-title { font-size: clamp(2.45rem, 15vw, 3.6rem); margin-bottom: 1rem; }
+	    .filter-bar { gap: .38rem; padding: .65rem 0; }
+	    .filter-label { display: block; width: 100%; min-width: 0; margin: 0 0 .12rem; }
+	    .filter-tag { font-size: .76rem; padding: .28rem .52rem; }
+	    .deadline-rule { font-size: .8rem; margin-bottom: .85rem; }
+	    .conf-card { padding: .82rem .78rem; box-shadow: none; }
 	    .conf-card-header { display:block; }
 	    .conf-tags { justify-content:flex-start; margin-top:.55rem; }
 	    .conf-meta span.meta-item { display:block; margin-right:0; margin-bottom:.2rem; }
+	    .deadline-row { display: block; padding: .42rem .5rem; }
+	    .deadline-date { display: inline; margin-left: .25rem; }
+	    .countdown { display: block; margin-top: .18rem; }
 	  }
 	</style>
 </head>
@@ -189,7 +198,7 @@
 	      <div id="conf-list"></div>
       <div id="no-results" class="no-results">No conferences match the selected filters.</div>
 
-      <p class="note">Deadlines and dates verified against official conference sites as of July 20, 2026. Always verify on the official conference website before submitting.</p>
+      <p class="note">Deadlines and dates verified against official conference sites as of July 20, 2026. Always verify on the official conference website.</p>
     </article>
   </div>
 </div>

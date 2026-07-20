@@ -92,6 +92,7 @@
     }
     .hero-title { font-family: var(--sm-font-display); font-size: 6.1rem; line-height: .9; margin: 0 0 .8rem; color: var(--sm-ink); letter-spacing: 0; max-width: 8ch; font-weight: 700; }
     .hero-title span { display: block; }
+    .hero-mobile-photo { display: none; }
     .hero-subtitle { display: inline-block; background: var(--sm-lime); color: var(--sm-ink); font-family: var(--sm-font-display); font-size: 1.35rem; line-height: 1.15; margin: 0 0 1.45rem; max-width: 25rem; padding: .18rem .46rem .24rem; transform: rotate(-1.2deg); transform-origin: left center; font-weight: 700; }
     .hero-lede { font-size: 1.12rem; line-height: 1.72; max-width: 720px; margin-bottom: 1rem; color: var(--sm-ink); }
     .hero-lede strong { color: var(--sm-ink); }
@@ -104,7 +105,7 @@
     .research-crop { aspect-ratio: 1200 / 535; overflow: hidden; }
     .research-crop img { display: block; width: 100%; height: auto; opacity: .88; mix-blend-mode: multiply; transform: translateY(-13.4%); }
 
-    .profile-panel { position: sticky; top: 82px; background: #fff; border: 2px solid var(--sm-ink); padding: 1rem; box-shadow: 10px 10px 0 rgba(var(--sm-lime-rgb), .78); transform: rotate(.7deg); }
+    .profile-panel { position: sticky; top: min(82px, calc(100vh - 897px)); background: #fff; border: 2px solid var(--sm-ink); padding: 1rem; box-shadow: 10px 10px 0 rgba(var(--sm-lime-rgb), .78); transform: rotate(.7deg); align-self: start; }
     .profile-photo { width: 100%; max-width: 210px; aspect-ratio: 1 / 1; object-fit: cover; display: block; margin-bottom: 1rem; filter: saturate(.92) contrast(.98); }
     .profile-name { font-size: 1.05rem; font-weight: 800; margin-bottom: .2rem; color: var(--sm-ink); }
     .profile-line { font-size: .9rem; color: var(--sm-muted); line-height: 1.45; margin-bottom: .55rem; }
@@ -165,21 +166,47 @@
     }
 
     @media (max-width: 680px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .home-shell { padding: .9rem 1rem 3rem; }
+      .hero-grid { display: flex; flex-direction: column; gap: 0; }
+      .hero-grid > main { display: contents; }
+      .hero-grid > main > * { order: 20; }
+      .home-shell { padding: 1.15rem 1rem 3rem; max-width: 100%; overflow-x: hidden; }
       .hero-grid::before { display: none; }
-      .hero-title { font-size: 3rem; max-width: none; }
-      .hero-subtitle { font-size: 1.25rem; transform: none; }
-      .hero-lede { font-size: 1.03rem; }
-      .statement-banner { font-size: 1.2rem; }
+      .hero-grid > main > .hero-title { order: 1; font-size: clamp(2.75rem, 16vw, 3.7rem); max-width: 100%; margin-bottom: .65rem; }
+      .hero-title .name-line { display: flex; align-items: center; justify-content: space-between; gap: 1.85rem; }
+      .hero-mobile-photo { display: block; width: 54px; height: 54px; border-radius: 50%; object-fit: cover; border: 0; box-shadow: 0 0 0 1px rgba(23, 20, 24, .08); flex-shrink: 0; transform: none; margin-left: auto; }
+      .hero-grid > main > .hero-subtitle { order: 2; font-size: 1.12rem; transform: none; max-width: 100%; margin-bottom: 1.15rem; }
+      .hero-grid > main > .hero-lede { order: 3; font-size: 1.03rem; }
+      .hero-grid > main > .hero-links { order: 4; gap: .42rem; margin: 1.1rem 0 1.35rem; }
+      .hero-links a { border: 1px solid rgba(var(--sm-accent-rgb), .28); padding: .36rem .52rem; background: #fff; }
+      .profile-panel { order: 8; display: block; box-shadow: 6px 6px 0 rgba(var(--sm-lime-rgb), .78); padding: .85rem; margin: .25rem 0 1.45rem; }
+      .hero-grid > main > .research-visual { order: 6; width: calc(100% - 7px); transform: none; box-shadow: 7px 7px 0 var(--sm-lime); margin: .25rem 0 1.35rem; box-sizing: border-box; }
+      .hero-grid > main > .statement-banner { order: 7; font-size: 1.05rem; line-height: 1.42; transform: none; padding: .95rem 1rem 1.05rem; margin: 1.25rem 0 1.65rem; }
+      .section-title { display: block; margin: 1.8rem 0 .65rem; }
+      .section-title h2 { font-size: 1.32rem; }
+      .section-title h2::before { width: 1.8rem; }
+      .section-actions, .section-title > .toggle-list { margin-top: .35rem; }
       .news-grid,
       .service-grid { grid-template-columns: 1fr; }
+      .pub-card, .news-entry, .service-entry { box-shadow: none; }
       .pub-top { display: block; }
       .tag { display: inline-block; margin-top: .35rem; }
-      .profile-panel { display: block; box-shadow: none; }
-      .profile-photo { width: 138px; height: 138px; }
-      .research-visual { width: 100%; transform: none; }
-      .news-entry, .service-entry { grid-template-columns: 72px minmax(0, 1fr); }
+      .profile-photo,
+      .profile-name,
+      .profile-line,
+      .side-service { display: none; }
+      .profile-name { font-size: 1rem; }
+      .profile-line { font-size: .84rem; margin-bottom: .38rem; }
+      .side-block { margin-top: .9rem; }
+      .side-block:first-of-type { margin-top: 0; }
+      .side-block h2 { margin-bottom: .3rem; }
+      .news-entry, .service-entry { grid-template-columns: 64px minmax(0, 1fr); gap: .6rem; padding: .7rem .72rem; }
+    }
+
+    @media (max-width: 380px) {
+      .hero-title { font-size: 2.55rem; }
+      .hero-mobile-photo { width: 48px; height: 48px; }
+      .hero-links a { width: 100%; }
+      .news-entry, .service-entry { grid-template-columns: 1fr; gap: .2rem; }
     }
   </style>
 </head>
@@ -209,7 +236,7 @@
   <article>
     <div class="hero-grid">
       <main>
-        <h1 class="hero-title">Stephanie <span>Maaz</span></h1>
+        <h1 class="hero-title">Stephanie <span class="name-line">Maaz <img src="/assets/img/steph-profile2.jpeg" class="hero-mobile-photo" alt="Stephanie Maaz"></span></h1>
         <div class="hero-subtitle">Algorithms for changing systems.</div>
         <p class="hero-lede">
           I am <strong>Stephanie Maaz</strong>, a researcher in theoretical computer science / mathematics.
@@ -364,19 +391,19 @@
           <div class="profile-line">PhD, Computer Science<br>University of Waterloo</div>
           <div class="profile-line">Abu Dhabi, UAE<br><a href="mailto:smaaz@uwaterloo.ca">smaaz@uwaterloo.ca</a></div>
 
-          <div class="side-block">
+          <div class="side-block side-research">
             <h2>Research Interests</h2>
             <p>Algorithms, reconfiguration, solution discovery, dynamic graph algorithms, meta-theorems, logic in CS, parameterized complexity, approximation, kernelization, learning-augmented algorithms.</p>
           </div>
 
-          <div class="side-block">
+          <div class="side-block side-education">
             <h2>Education</h2>
             <div><span class="year">2021-2025</span>(Direct) PhD, University of Waterloo</div>
             <div><span class="year">2019-2021</span>BSc CS, American University of Beirut</div>
             <div><span class="year">2013-2016</span>BBA Finance (Investment Management), American University of Beirut</div>
           </div>
 
-          <div class="side-block">
+          <div class="side-block side-service">
             <h2>Service &amp; Teaching</h2>
             <div>Teaching assistant, University of Waterloo</div>
             <div>Senator and Member of the Finance Committee, University of Waterloo</div>
